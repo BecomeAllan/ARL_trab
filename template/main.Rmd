@@ -1,7 +1,7 @@
 ---
 author: 
  - 'Allan Victor Almeida Faria (190127180)'
- - 'Ananda Alme de Sá (150117345)'
+ - 'Ananda Almeida de Sá (150117345)'
  - 'Bruno Kevyn Andrade de Souza'
 date: '21/02/2021'
 documentclass: abntex2
