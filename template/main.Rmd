@@ -84,114 +84,89 @@ knitr::opts_chunk$set(echo = TRUE)
 
 
 
+
 # Introdução 
 
 Tipo de problema, tipo de dados, proposta para contornar o problema
 
 
+## Objetivos
 
-
-## Leitura de dados
-
-
+  \ \ A fim de estudar sobre a duração da internação nos hospitais dos Estados Unidos no período de 1975-1976, foi retirada uma amostra aleatória de 113 hospitais selecionados entre 338 pesquisados, para isso foram propostas as seguintes hipóteses:
+  
+  \ \ A primeira é verificar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e se há diferenças entre os serviços disponíveis pelos hospitais. Além de verificar se a mesma variável resposta mencionada anteriormente varia segundo a região.
+  
+  \ \ Já a segunda é verificar se a duração da internação está associada a características do paciente, seu tratamento e do hospital.
+  
 ```{r, include=FALSE}
-library(readxl)
-library(dplyr)
-datax <- read_excel(path ='../Dados/Dados_trabalho_20212.xlsx')
-datax <- na.omit(datax)
-datax$X7 <- as.factor(datax$X7)
-datax$X8 <- as.factor(datax$X8)
-datax$ID <- as.factor(datax$ID)
-
-
-# Dados ajustados
-datax_ajusdet <-datax %>% select_if(is.numeric) %>% scale()
-datax[,colnames(datax_ajusdet)] <- datax_ajusdet
-
-
-data <- datax
-names(data) <- c('Número de Identificação', 'Duração da Internação', 'Idade', 'Risco de Infecção', 'Proporção de Culturas de Rotina', 'Proporção de Raio-X de Tórax de Rotina', 'Número de leitos', 'Filiação a Escola de Medicina', 'Região', 'Média diária de pacientes', 'Número de enfermeiro(s)', 'Facilidades e serviços disponíveis')
+# library(readxl)
+# library(dplyr)
+# datax <- read_excel(path ='Dados_trabalho_20212.xlsx')
+# datax <- na.omit(datax)
+# datax$X7 <- as.factor(datax$X7)
+# datax$X8 <- as.factor(datax$X8)
+# datax$ID <- as.factor(datax$ID)
+# # Dados ajustados
+# # Dados ajustados
+# data <- datax
+# datax_ajusdet <-datax %>% select_if(is.numeric) %>% scale()
+# datax[,paste0(colnames(datax_ajusdet), 'adj') ] <- datax_ajusdet
+# 
+# data <- datax
+# names(data) <- c('Número de Identificação', 'Duração da Internação', 'Idade', 'Risco de Infecção', 'Proporção de Culturas de Rotina', 'Proporção de Raio-X de Tórax de Rotina', 'Número de leitos', 'Filiação a Escola de Medicina', 'Região', 'Média diária de pacientes', 'Número de enfermeiro(s)', 'Facilidades e serviços disponíveis')
 ```
 
+## Metodologia
 
-
-O programa utilizado para analisar os dados disponibilizados em Excel será o R Studio, versão 4.2.0, importados como um data frame (planilha), onde as colunas representam as variáveis de estudo e cada linha representa um hospital dos Estados Unidos no período de 1975-1976.
-
+  \ \ O programa utilizado para analisar os dados disponibilizados em Excel será o R Studio, versão 4.2.0. Para uma primeira visualização dos dados, necessita-se identificar e realizar a análise descritiva das variáveis, portanto os dados estão organizados e classificados da seguinte maneira:
 
 ```{r}
 # Tabela de nomes X1: Nome variavel
-knitr::kable(cbind(names(data),names(datax)),
-             caption = 'Descrição dos códigos da tabela com a seguinte indentificação da variável.')
+# 
+# Nome <- names(data)
+# 
+# Código <- names(datax)
+# 
+# Descrição <- c('1-113', 'Duração média da internação de todos os pacientes no hospital (em dias)', 'Idade média dos pacientes', 'Probabilidade média estimada de adquirir infecção no hospital (em %)', 'Razão do número de culturas realizadas com relação ao número de pacientes sem sinais ou sintomas de infeção adquirida no hospital, vezes 100.', 'Razão do número de Raio-X de Tórax realizados com relação ao número de pacientes sem sinais ou sintomas de pneumonia, vezes 100.', 'Número médio de leitos no hospital durante o período de estudo', '1 – sim 2 – não', 'Região Geográfica, onde: 1 – NE 2- NC 3 – S e 4 – W', 'Número médio de pacientes no hospital por dia durante o período do estudo', 'Número médio de enfermeiros(as) de tempo-integral ou equivalente registrados e licenciados durante o período de estudo ( número de tempos integrais+metade do número de tempo parcial)', '% de 35 potenciais facilidades e serviços que são fornecidos pelo hospital')
+# 
+# Classificação <- c('Qualitativa ordinal', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Qualitativa ordinal', 'Qualitativa nominal', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua')
+# 
+# library(knitr)
+# knitr::kable(cbind(Nome,Código,Descrição, Classificação),
+#              caption = 'Descrição dos códigos da tabela com a seguinte indentificação da variável.')
+```
+
+  \ \ As etapas para o estudo da internação dos hospitais foram separadas em duas maneiras, a primeira é a construção e a segunda é a validação do modelo. Para a primeira etapa, foi selecionada uma amostra aleatória simples com 57 observações, para a segundo ficou o restante das observações que compõe o banco. Para as duas hipóteses procura-se um modelo regressivo linear múltiplo do tipo: 
+
+$$
+      Y_i = \beta_0 + \beta_1  X_{i1} + \beta_2  X_{i2} + \dots + \beta_k  X_{ik}   + e_{i} \ , \forall \ \textit{i = 1,} \dots \textit{, n}
+$$
+  \ \ Onde tem-se,
+  
+*	$$ Y_{ij} $$ - variável resposta;
+
+*	$$ X_{i1}, X_{i2} , \dots  , X_{ik} $$ - k variáveis explicativas ou independentes;
+
+*	$$ \beta_0, \beta_1 , \beta_2,  \dots  , \beta_k $$ - parâmetros do modelo;
+
+*	$$ e_{i} $$ - são independentes e $$ N(0, \sigma^2) $$.
+
+
+  \ \ Para a primeira hipótese, define-se como modelo I aquele que relaciona a variável resposta, Número de enfermeiro(s) (X10), com as variáveis explicativas, instalações (X6), serviços disponíveis pelos hospitais (X11) e a região (X8).
+  
+  \ \ Já o modelo II é definido como aquele que relaciona a variável resposta, Duração da internação (X1), com as variáveis explicativas, a características do paciente (X2), seu tratamento (X4 e X5) e do hospital (X3).
+  
+
+```{r}
+# par(mfrow = c(1,2))
+# datax$X7 %>%  table(.) %>% barplot(xlab='X7') 
+# datax$X8 %>%  table(.) %>% barplot(xlab='X8')
 ```
 
 
+# Resultado
 
-### Descrição das variáveis
-
-
-
-* **Duração da Internação**
-
-\ \ A duração de internação é uma variável quantitativa contínua que representa a duração média da internação de todos os pacientes no hospital (em dias). 
-
-
-* **Idade**
-
-\ \ A idade é uma variável quantitativa contínua que representa a idade média dos pacientes de cada hospital. 
-
-
-* **Risco de Infecção**
-
-\ \ O risco de infecção é uma variável quantitativa contínua que representa a probabilidade média estimada de adquirir infecção no hospital (em %). 
-
-
-* **Proporção de Culturas de Rotina**
-
-\ \ A proporção de culturas de rotina é uma variável quantitativa contínua que representa a razão do número de culturas realizadas com relação ao número de pacientes sem sinais ou sintomas de infeção adquirida no hospital, vezes 100. 
-
-* **Proporção de Raio-X de Tórax de Rotina**
-
-\ \ A proporção de raio-X de tórax de rotina é uma variável quantitativa contínua que representa a razão do número de raio-X de tórax realizados com relação ao número de pacientes sem sinais ou sintomas de pneumonia, vezes 100. 
-
-
-* **Número de leitos**
-
-\ \ O número de leitos é uma variável quantitativa discreta que representa o número médio de leitos no hospital durante o período de estudo. 
-
-
-
-
-* **Filiação a Escola de Medicina**
-
-\ \ A filiação a escola de medicina é uma variável qualitativa ordinal onde o 1 significa que a escola tem filiação, e 2 que não tem. 
-
-
-* **Região**
-
-\ \ A região é uma variáveis qualitativas nominal onde referese as regiões dos jospitais. 
-
-
-
-* **Média diária de pacientes**
-
-\ \ O média diária de pacientes é uma variável quantitativa discreta que representa o número médio de pacientes no hospital por dia durante o período do estudo. 
-
-
-
-* **Número de enfermeiro(s)**
-
-\ \ O número de enfermeiro(s) é uma variável quantitativa discreta que representa o Número médio de enfermeiros(as) de tempo-integral ou equivalente registrados e licenciados durante o período de estudo (número de tempos integrais+metade do número de tempo parcial). 
-
-
-* **Facilidades e serviços disponíveis**
-
-\ \ A facilidades e serviços disponíveis é uma variável quantitativa contínua que representa a porcentagem de 35 potenciais facilidades e serviços que são fornecidos pelo hospital. 
-
-
-### Estatisticass Descritivas
-
-
-A tabela 2, mosta a estatistica descritivas das variáveis numéricas dos dados sem normalização, com efeito de mensuração diferentes como descrita em "Descrições de variáveis".
+  \ \ Realizando uma breve análise descritiva das variáveis quantitativas, tem-se o boxplot com os dados normalizados:
 
 \input{Tables/all_box_blox}
 
@@ -202,18 +177,40 @@ A tabela 2, mosta a estatistica descritivas das variáveis numéricas dos dados 
 #   select(X1,X3)
 # datax1 <-datax  %>%
 #   select(X6,X9,X10)
-
 # par(mfrow = c(1,3))
 # boxplot(datax1)
 # boxplot(datax2)
 # boxplot(datax3)
-boxplot(datax_ajusdet)
+# boxplot(datax_ajusdet)
+```
+
+Para verificar a natureza e a força da relação entre as variáveis e identificar lacunas e pontos discrepantes no conjunto de dados, utiliza-se a matriz de correlação.
+
+```{r fig.cap="Gráfico de calor da correlação entre as variaváveis dos dados."}
+# library(ggcorrplot)
+# library(dplyr)
+# pmat = dplyr::select(datax,!matches("adj")) %>% select_if(is.numeric) %>% cor_pmat()
+# 
+# dplyr::select(datax,!matches("adj")) %>% select_if(is.numeric) %>% cor(.) %>% 
+#   ggcorrplot( type = "lower", p.mat = pmat, hc.order = TRUE,lab = TRUE) 
+```
+
+Analisando o gráfico acima, tem-se que as variáveis que estão nas  três extremidades externas dos dois eixos apresentam uma correlação forte, então, X10 com X11, X6 com X11 e X10 e X9 com X11, X10 e X6. A maior correlação é apresentada entre as variáveis X6 e X9, que é o número de leitos e a média diária de pacientes, respectivamente.
+
+
+
+
+
+
+
+```{r fig.cap="Gráfico de box-plot das variaváveis dos dados."}
+# boxplot(datax)
 ```
  
 ```{r}
-par(mfrow = c(1,2))
-datax %>% select(X7) %>%  table(.) %>% barplot(xlab='X7') 
-datax %>% select(X8) %>%  table(.) %>% barplot(xlab='X8')
+# par(mfrow = c(1,2))
+# datax %>% select(X7) %>%  table(.) %>% barplot(xlab='X7') 
+# datax %>% select(X8) %>%  table(.) %>% barplot(xlab='X8')
 ```
 
  
@@ -221,19 +218,6 @@ datax %>% select(X8) %>%  table(.) %>% barplot(xlab='X8')
 
  Para verificar a natureza e a força da relação entre as variáveis e identificar lacunas e pontos discrepantes no conjunto de dados, utiliza-se a matriz de correlação aplicado no script a seguir.
 
-```{r fig.cap="Gráfico de calor da correlação entre as variaváveis dos dados."}
-library(ggcorrplot)
-library(dplyr)
-
-pmat = datax %>% select_if(is.numeric) %>%cor_pmat()
-
-datax %>% select_if(is.numeric) %>% cor(.) %>% 
-  ggcorrplot( type = "lower", p.mat = pmat, hc.order = TRUE,lab = TRUE) 
-
-
-# k = datax %>% select_if(is.numeric) %>% summary()
-
-```
 
 
 
@@ -247,12 +231,12 @@ datax %>% select_if(is.numeric) %>% cor(.) %>%
 Para efetuar um modelo, separa-se o  banco em teste e treino no qual:
 
 ```{r}
-set.seed(10)
-dados_train <- datax[sample(nrow(datax), 57, replace = F),] %>% data.frame()
-dados_valid <- anti_join(datax, dados_train, by="ID") %>% data.frame()
-
-# inbalanced data
-table(dados_train$X8)
+# set.seed(10)
+# dados_train <- datax[sample(nrow(datax), 57, replace = F),] %>% data.frame()
+# dados_valid <- anti_join(datax, dados_train, by="ID") %>% data.frame()
+# 
+# # inbalanced data
+# table(dados_train$X8)
 ```
 
 
@@ -262,26 +246,36 @@ table(dados_train$X8)
 
 
 ```{r}
-library(plotly)
-require(gridExtra)
-require(ggplot2)
-library("patchwork")
+# library(plotly)
+# require(gridExtra)
+# require(ggplot2)
+# library("patchwork")
+# 
+# g0<-ggplot(data = dados_train, aes(x=X6, X10, color = X8))+
+#   geom_point()+
+#   geom_smooth( method=lm, se=FALSE)+theme_bw()
+# 
+# g1<-ggplot(data = dados_train, aes(x=X11, X10, color = X8))+
+#   geom_point()+
+#   geom_smooth( method=lm, se=FALSE)+theme_bw()+ ylab("")
+# 
+# g0+g1+plot_layout(guides = "collect")  
 
-g0<-ggplot(data = dados_train, aes(x=X6, X10, color = X8))+
-  geom_point()+
-  geom_smooth( method=lm, se=FALSE)+theme_bw()
+### ANANDA CODE
+# Avaliando quais variaveis tem significância
+# library("tidyverse")
+# library("repurrrsive")
+# summary(aov(X10 ~ X8*X6*X11*X7, data=dados_train))
+# lista <- map_df(, extract, c("Df", "Sum Sq", "Mean Sq", "F value", "Pr(>F)"))
 
-g1<-ggplot(data = dados_train, aes(x=X11, X10, color = X8))+
-  geom_point()+
-  geom_smooth( method=lm, se=FALSE)+theme_bw()+ ylab("")
-
-g0+g1+plot_layout(guides = "collect")  
+# 
+# knitr::kable(teste)
 ```
 
 
 **__Espera-se que o número de enfermeira(o)s esteja relacionado às instalações e serviços  disponíveis através de um modelo de segunda ordem. Suspeita-se também que varie segundo__**
 
-**serviços disponíveis:X1,X4,X5,X6,X11**
+**serviços disponíveis:X1,X4,X5,X6,X9,X11**
 
 **instalações:X7**
 
@@ -289,115 +283,252 @@ g0+g1+plot_layout(guides = "collect")
 
 
 
-\ \ Deseja-se estudar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e  se há diferenças entre os serviços disponíveis pelos hospitais.  Neste caso, a variável resposta é o número de enfermeira(o)s e as duas outras variáveis são explicativas. Para isso, faz-se necessário a aplicação da regressão linear múltipla realizada no script a seguir:
+\\ Deseja-se estudar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e  se há diferenças entre os serviços disponíveis pelos hospitais.  Neste caso, a variável resposta é o número de enfermeira(o)s e as duas outras variáveis são explicativas.
 
+Para isso, faz-se necessário a aplicação da regressão linear múltipla. No qual avaliando o gráfico da dispersão de ordem da variável região $X8$ e o número de enfermeiros $X10$, verifica-se que não possui diferença significatíva na dispersão destes valores.
 
 ```{r}
-boxplot(dados_train$X10~dados_train$X8)
+# boxplot(dados_train$X10~dados_train$X8)
+# summary(aov(dados_train$X10~dados_train$X8))
 ```
 
-
-Para um modelo inicial temos que
-
-$$\hat{y}=\beta_{0}+\beta_{X8}X8+\beta_{X6}X6+\beta_{X11}X11$$
+### Pressupostos para um modelo inicial
 
 
-analizando ANOVA do modelo, percebemos que o modelo tem apenas interação com $X6,X11$, e o resto das variáveis nao foram significantes
+Agora presumindo um modelo inicial para explicar a variável de número de enfermeiros $X10$ é dada por
+
+
+$$\begin{aligned}
+\hat{y}_{X10}&=
+\beta_{0}+\beta_{X1}X1+\beta_{X6}X6+\beta_{X8}X8+\beta_{X11}X11
+\\ &+\beta_{X1,X8}(X1X8)+\beta_{X6,X8}(X6X8)+\beta_{X7,X8}(X7X8)+\beta_{X11,X8}(X11X8)
+\end{aligned}$$
+
+no qual presume que o modelo é explicado pela "duração da internação" ($X1$), "Número de leitos" ($X6$), "Facilidades e serviços disponiveis" ($X11$) com a "Região".
+
 
 ```{r}
 # Avaliando quais variaveis tem significância
-summary(aov(X10 ~ X8*X6*X11*X7, data=dados_train))
+# summary(aov(X10 ~ X1adj*X8+X6adj*X8+X11adj*X8+X7*X8, data=dados_train))
 ```
 
+agora os resultados obtidos pela anova, temos que pelos testes, deu significativo as variáveis explicativas sem interação e a interação com da região $X8$ com a variávei $X1$ e as outras variáveis foram descartadas por estar perto do limite do p-value 0.05.
 
-agora construindo um modelo de regressão linear com esta configuração temos que
+Agora construindo um novo modelo de regressão 
 
+$$\begin{aligned}
+\hat{y}_{X11}&=
+\beta_{0}+\beta_{X1}X1+\beta_{X6}X6+\beta_{X7}X7+\beta_{X8}X8+\beta_{X1,X8}(X1X8)
+\end{aligned}$$
+
+temos que
 
 
 ```{r}
-modelo_inicial <- lm(X10 ~ X6+X7, data=dados_train)
-summary(modelo_inicial)
+# table(dados_train$X8)
+# 
+# modelo_inicial <- lm(X10 ~ X1adj*X8 + X6adj +X7*X8, data=dados_train)
+# summary(modelo_inicial)
 ```
 
-com valor do F-statistics, percebe-se que o teste de regressão é significativo, indicando que há
-regressão nesses dados, e analizando o modelo,  x11 e x6  não tem diferença significativa, podendo descartar
-acabando com um modelo do tipo
+com valor do F-statistics, para o teste linear geral, percebe-se que o teste de regressão é significativo, indicando que há regressão nesses dados, e analizando o modelo, apenas  x6 tem diferenças significativas, podendo descartar acabando com um modelo do tipo, no qual rejeitamos a normalidade, assim transformando a variável através do boxcox
 
 ```{r}
-modelo_inicial <- lm(X10 ~  X6+X7, data=dados_train)
-summary(modelo_inicial)
+# modelo_inicial <- lm(X10 ~  X6adj+X7, data=dados_train)
+# summary(modelo_inicial)
+# shapiro.test(modelo_inicial$residuals)
 ```
+
+como foi rejeitada o teste de normalidade, utilizamos uma transformação boxcox para criar o novo modelo, onde seque se que
+
+
+```{r}
+# library(MASS)
+# k<-boxcox(modelo_inicial)
+# lambda<- k$x[which.max(k$y)]
+# 
+# dados_train['X10_cox'] <- (dados_train$X10^lambda-1)/lambda
+# 
+# modelo_inicial_cox <- lm(X10_cox ~X6adj+X7, data=dados_train)
+# summary(modelo_inicial_cox)
+# shapiro.test(modelo_inicial_cox$residuals)
+```
+
 
 agora avalindo este modelo temos que o erro medio das previsões é baixo e o R2 no banco de teste é alto, assim sendo um bom modelo para começar e avaliar com as suposições do hospital
 
 
 ```{r}
-library(caret)
-# predições
-predictions <- modelo_inicial %>% predict(dados_valid)
-data.frame(
-  RMSE = RMSE(predictions, dados_valid$X10),
-  R2 = R2(predictions, dados_valid$X10)
-  )
-
-
-
-# Teste de multicolinearidade Gif (>1 indica multicolinearidade)
-car::vif(modelo_inicial)
-
-shapiro.test(modelo_inicial$residuals) 
-
-plot(modelo_inicial)
+# require(MASS)
+# library(caret)
+# 
+# 
+# # Teste de multicolinearidade Gif (>1 indica multicolinearidade)
+# # car::vif(modelo_inicial)
+# 
+# par(mfrow=c(2,2))
+# plot(modelo_inicial_cox)
 ```
+
+Retirando os outliers temos que 
+
+```{r}
+# modelo_inicial_cox <- lm(X10_cox ~  X6adj+X7, data=dados_train[-c(18,48,46),])
+# summary(modelo_inicial_cox)
+# shapiro.test(modelo_inicial_cox$residuals)
+# 
+# par(mfrow=c(2,2))
+# plot(modelo_inicial_cox)
+```
+
+
+Agora avalindo o modelo no banco de teste, temos que a raiz do erro quadratico médio e dado por
+
+```{r}
+# predições
+# predictions <- modelo_inicial_cox %>% predict(dados_valid)
+# data.frame(
+#   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
+#   R2 = R2(predictions, ((dados_valid$X10)^lambda-1)/lambda)
+#   )
+```
+
+
+### modelo inicial com o metodo de step wise
+
 
 
 Agora avaliando através do steepwise, temos que o modelo que converge sobre o uso de mais variaveis
 
 
 ```{r}
-modelo_inicial <- lm(X10 ~ X6+X7, data=dados_train)
-summary(modelo_inicial)
-
-modmin<-lm(X10 ~ 1, data=dados_train)
-modcompl<-lm(X10~ X1+X2+X3+X4+X5+X6+X8+X9+X11, data=dados_train)
-
-modfim  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="both",data=dados_train)
-summary(modfim)
+# modmin<-lm(X10_cox ~ X6adj+X7, data=dados_train[-c(18,48,46),])
+# 
+# modcompl<-lm(X10_cox~ X1adj+X2adj+X3adj+X4adj+X5adj+X6adj+X7+X8+X9adj+X11adj, data=dados_train[-c(18,48,46),])
+# 
+# modfim  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="both",data=dados_train[-c(18,48,46),], trace = F)
+# summary(modfim)
+# shapiro.test(modfim$residuals)
 ```
 
-agora com o teste linear geral, temos que existe diferença significatifva entre os modelos e acabamos com um moelo mais parcimanioso sem multicolineariade que é o caso do modtest
+agora com o teste linear geral, temos que existe diferença significatifva entre os modelos e acabamos com um modelo mais parcimanioso sem multicolineariade que é o caso do modtest
 
 ```{r}
-anova(modelo_inicial,modfim) # modelo 2 é melhor 
-AIC(modelo_inicial,modfim) # quanto menoor melhor
-BIC(modelo_inicial,modfim)
+# anova(modelo_inicial_cox,modfim) # modelo 2 é melhor 
+# AIC(modelo_inicial_cox,modfim)
+```
+
+
+Assim, o modelo 2 apresenta melhor desenpenho considerando o RSS, e o teste linear geral possui diferença significante, ou seja, o modelos são diferentes, agora avalindo este modelo `modfim`, temos que
+
+```{r}
+ # quanto menoor melhor
+# car::vif(modfim)
+```
+
+para os parametros do $X6$ e $X9$, encontrou grande correlação entre elas, e para avaliar que o modelo não possua colinearidade, temos que
+
+
+```{r}
+# modsem9<-lm(X10_cox ~ X6adj+X7+X3adj+X2adj+X11adj+X1adj+X5adj, data=dados_train[-c(18,48,46),])
+# summary(modsem9)
+# modsem9<-lm(X10_cox ~ X6adj+X3adj, data=dados_train[-c(18,48,46),])
+# summary(modsem9)
+# car::vif(modsem9)
+# shapiro.test(modsem9$residuals) 
+# 
+# predictions <- modsem9 %>% predict(dados_valid)
+# data.frame(
+#   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
+#   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
+#   )
+# 
+# 
+# 
+# modsem6<-lm(X10_cox ~ X9adj+X7+X3adj+X2adj+X11adj+X1adj+X5adj, data=dados_train[-c(18,48,46),])
+# summary(modsem6)
+# modsem6<-lm(X10_cox ~ X9adj+X3adj, data=dados_train[-c(18,48,46),])
+# summary(modsem6)
+# car::vif(modsem6)
+# shapiro.test(modsem6$residuals) 
+# 
+# 
+# predictions <- modsem6 %>% predict(dados_valid)
+# data.frame(
+#   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
+#   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
+#   )
+# 
+# 
+# 
+# anova(modfim,modsem6)
+# anova(modfim,modsem9)
+# AIC(modsem9,modsem6)
+```
+
+```{r}
+# par(mfrow=c(2,2))
+# plot(modsem9)
+```
 
 
 
-car::vif(modfim)
-shapiro.test(modfim$residuals) 
-
-
-modtest<- lm(X10 ~ X8+X4+X6, data=dados_train)
-car::vif(modtest)
-
-anova(modfim,modtest) 
+assim, no final foi escolhido o modelo `modsem9` no qual os pressupostos são atendidos e possui valores mais consistentes na predição do número de enfermeiros
 
 
 
-predictions <- modtest %>% predict(dados_valid)
-data.frame(
-  RMSE = RMSE(predictions, dados_valid$X10),
-  R2 = R2(predictions, dados_valid$X10)
-  )
 
-predictions <- modfim %>% predict(dados_valid)
-data.frame(
-  RMSE = RMSE(predictions, dados_valid$X10),
-  R2 = R2(predictions, dados_valid$X10)
-  )
+
+### modelo hospital assumptions
+
+
+Agora como o modelo formulado pelo hospital temos que,
+
+
+```{r}
+# mod_sec<- lm(formula = X10_cox ~ X6adj+I(X6adj^2) + X3adj+I(X3adj^2)+X8 , data = dados_train[-c(18,48, 46), ])
+# summary(mod_sec)
+# 
+# mod_sec<- lm(formula = X10_cox ~ X6adj + X3adj+I(X3adj^2) , data = dados_train[-c(18,48, 46), ])
+# summary(mod_sec)
+```
+
+```{r}
+# par(mfrow=c(2,2))
+# plot(mod_sec)
+```
+
+
+
+```{r}
+# car::vif(mod_sec)
+# shapiro.test(mod_sec$residuals) 
+# 
+# predictions <- mod_sec %>% predict(dados_valid)
+# 
+# data.frame(
+#   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
+#   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
+#   )
+# 
+# predictions <- modsem9 %>% predict(dados_valid)
+# data.frame(
+#   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
+#   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
+#   )
+# 
 
 ```
+
+
+
+```{r}
+# anova(modsem9,mod_sec)
+# AIC(modsem9,mod_sec)
+```
+Agora avaliando o teste linear geral e o AIC, temos que o modelo proposto com diferença significativa, e assim,
+o modelo escolhido foi o que possui ordem quadrática e consegue explicar boa parte da variabilidade do número de enfermeiros.
+
 
 
 
