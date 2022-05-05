@@ -86,7 +86,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Introdução 
 
-
+Tipo de problema, tipo de dados, proposta para contornar o problema
 
 
 
@@ -103,19 +103,16 @@ datax$X7 <- as.factor(datax$X7)
 datax$X8 <- as.factor(datax$X8)
 datax$ID <- as.factor(datax$ID)
 
-data<-datax
+
+# Dados ajustados
+datax_ajusdet <-datax %>% select_if(is.numeric) %>% scale()
+datax[,colnames(datax_ajusdet)] <- datax_ajusdet
 
 
+data <- datax
 names(data) <- c('Número de Identificação', 'Duração da Internação', 'Idade', 'Risco de Infecção', 'Proporção de Culturas de Rotina', 'Proporção de Raio-X de Tórax de Rotina', 'Número de leitos', 'Filiação a Escola de Medicina', 'Região', 'Média diária de pacientes', 'Número de enfermeiro(s)', 'Facilidades e serviços disponíveis')
 ```
 
-
-
-
-
-
-
-<!-- Inicio -->
 
 
 O programa utilizado para analisar os dados disponibilizados em Excel será o R Studio, versão 4.2.0, importados como um data frame (planilha), onde as colunas representam as variáveis de estudo e cada linha representa um hospital dos Estados Unidos no período de 1975-1976.
@@ -199,21 +196,26 @@ A tabela 2, mosta a estatistica descritivas das variáveis numéricas dos dados 
 \input{Tables/all_box_blox}
 
 ```{r fig.cap="Gráfico de box-plot das variaváveis dos dados."}
-datax2 <-datax  %>%
-  select(X5,X2,X4,X11)
-datax3 <-datax  %>%
-  select(X1,X3)
-datax1 <-datax  %>%
-  select(X6,X9,X10)
+# datax2 <-datax  %>%
+#   select(X5,X2,X4,X11)
+# datax3 <-datax  %>%
+#   select(X1,X3)
+# datax1 <-datax  %>%
+#   select(X6,X9,X10)
 
-par(mfrow = c(1,3))
-boxplot(datax1)
-boxplot(datax2)
-boxplot(datax3)
+# par(mfrow = c(1,3))
+# boxplot(datax1)
+# boxplot(datax2)
+# boxplot(datax3)
+boxplot(datax_ajusdet)
 ```
  
- 
- 
+```{r}
+par(mfrow = c(1,2))
+datax %>% select(X7) %>%  table(.) %>% barplot(xlab='X7') 
+datax %>% select(X8) %>%  table(.) %>% barplot(xlab='X8')
+```
+
  
 ### Correlação entre as variáveis 
 
@@ -226,102 +228,193 @@ library(dplyr)
 pmat = datax %>% select_if(is.numeric) %>%cor_pmat()
 
 datax %>% select_if(is.numeric) %>% cor(.) %>% 
-  ggcorrplot( type = "lower", p.mat = pmat, hc.order = TRUE)
+  ggcorrplot( type = "lower", p.mat = pmat, hc.order = TRUE,lab = TRUE) 
 
 
-datax %>% select_if(is.numeric) %>% summary()
+# k = datax %>% select_if(is.numeric) %>% summary()
+
 ```
 
 
 
-
+\newpage
 
 #  Objetivo 
 
 
-## Número de enfermeira(o)s
+## Testes
 
-\ \ Deseja-se estudar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e  se há diferenças entre os  serviços disponíveis pelos hospitais.  Neste caso, a variável resposta é o número de enfermeira(o)s e as duas outras variáveis são explicativas. Para isso, faz-se necessário a aplicação da regressão linear múltipla realizada no script a seguir:
-
+Para efetuar um modelo, separa-se o  banco em teste e treino no qual:
 
 ```{r}
-# teste de ausencia de regresao (significativo)
-summary(aov(`Número de enfermeiro(s)` ~ `Número de leitos`+ `Facilidades e serviços disponíveis`, data=data))
+set.seed(10)
+dados_train <- datax[sample(nrow(datax), 57, replace = F),] %>% data.frame()
+dados_valid <- anti_join(datax, dados_train, by="ID") %>% data.frame()
+
+# inbalanced data
+table(dados_train$X8)
 ```
 
 
-```{r}
-modcomp<-lm(`Número de enfermeiro(s)` ~ `Número de leitos` +
-              I(`Número de leitos`^2)+
-              `Facilidades e serviços disponíveis`+
-              I(`Facilidades e serviços disponíveis`^2)+
-              `Facilidades e serviços disponíveis`*`Número de leitos`
-              , data = data)
-            
-summary(modcomp)
-```
-
-
-
-
-```{r}
-shapiro.test(residuals(modcomp))
-
-
-
-# windows()
-par(mfrow = c(2, 2))
-plot(fitted(modcomp), residuals(modcomp),xlab="Valores Ajustados",ylab="Resíduos")
-abline(h=0)
-plot(data$`Número de leitos`, residuals(modcomp),xlab="Número de leitos",ylab="Resíduos")
-abline(h=0)
-
-plot(data$`Facilidades e serviços disponíveis`, residuals(modcomp),xlab="Facilidades e serviços disponíveis",ylab="Resíduos")
-abline(h=0)
-
-qqnorm(residuals(modcomp), ylab="Resíduos",xlab="Quantis teóricos",main="")
-qqline(residuals(modcomp))
-```
 
 ## Número de enfermeira(o)s
 
-```{r}
-# Teste de ausencia de regressao
-summary(aov(`Duração da Internação` ~
-              `Proporção de Raio-X de Tórax de Rotina`+
-              `Proporção de Culturas de Rotina`,
-            data = data))
 
-# Regressao
-modcomp<-lm(`Duração da Internação` ~
-              `Proporção de Raio-X de Tórax de Rotina`+
-              `Proporção de Culturas de Rotina`,
-            data = data)
-summary(modcomp)
-```
 
 ```{r}
-# Teste de normalidade
-shapiro.test(residuals(modcomp))
-# bartlett.test(residuals(modcomp))
+library(plotly)
+require(gridExtra)
+require(ggplot2)
+library("patchwork")
 
+g0<-ggplot(data = dados_train, aes(x=X6, X10, color = X8))+
+  geom_point()+
+  geom_smooth( method=lm, se=FALSE)+theme_bw()
 
+g1<-ggplot(data = dados_train, aes(x=X11, X10, color = X8))+
+  geom_point()+
+  geom_smooth( method=lm, se=FALSE)+theme_bw()+ ylab("")
 
-# windows()
-par(mfrow = c(2, 2))
-plot(fitted(modcomp), residuals(modcomp),xlab="Valores Ajustados",ylab="Resíduos")
-abline(h=0)
-plot(data$`Proporção de Raio-X de Tórax de Rotina`, residuals(modcomp),xlab="Proporção de Raio-X de Tórax de Rotina",ylab="Resíduos")
-abline(h=0)
-
-plot(data$`Proporção de Culturas de Rotina`, residuals(modcomp),xlab="Proporção de Culturas de Rotina",ylab="Resíduos")
-abline(h=0)
-
-qqnorm(residuals(modcomp), ylab="Resíduos",xlab="Quantis teóricos",main="")
-qqline(residuals(modcomp))
+g0+g1+plot_layout(guides = "collect")  
 ```
 
 
+**__Espera-se que o número de enfermeira(o)s esteja relacionado às instalações e serviços  disponíveis através de um modelo de segunda ordem. Suspeita-se também que varie segundo__**
+
+**serviços disponíveis:X1,X4,X5,X6,X11**
+
+**instalações:X7**
+
+**região:X8**
+
+
+
+\ \ Deseja-se estudar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e  se há diferenças entre os serviços disponíveis pelos hospitais.  Neste caso, a variável resposta é o número de enfermeira(o)s e as duas outras variáveis são explicativas. Para isso, faz-se necessário a aplicação da regressão linear múltipla realizada no script a seguir:
+
+
+```{r}
+boxplot(dados_train$X10~dados_train$X8)
+```
+
+
+Para um modelo inicial temos que
+
+$$\hat{y}=\beta_{0}+\beta_{X8}X8+\beta_{X6}X6+\beta_{X11}X11$$
+
+
+analizando ANOVA do modelo, percebemos que o modelo tem apenas interação com $X6,X11$, e o resto das variáveis nao foram significantes
+
+```{r}
+# Avaliando quais variaveis tem significância
+summary(aov(X10 ~ X8*X6*X11*X7, data=dados_train))
+```
+
+
+agora construindo um modelo de regressão linear com esta configuração temos que
+
+
+
+```{r}
+modelo_inicial <- lm(X10 ~ X6+X7, data=dados_train)
+summary(modelo_inicial)
+```
+
+com valor do F-statistics, percebe-se que o teste de regressão é significativo, indicando que há
+regressão nesses dados, e analizando o modelo,  x11 e x6  não tem diferença significativa, podendo descartar
+acabando com um modelo do tipo
+
+```{r}
+modelo_inicial <- lm(X10 ~  X6+X7, data=dados_train)
+summary(modelo_inicial)
+```
+
+agora avalindo este modelo temos que o erro medio das previsões é baixo e o R2 no banco de teste é alto, assim sendo um bom modelo para começar e avaliar com as suposições do hospital
+
+
+```{r}
+library(caret)
+# predições
+predictions <- modelo_inicial %>% predict(dados_valid)
+data.frame(
+  RMSE = RMSE(predictions, dados_valid$X10),
+  R2 = R2(predictions, dados_valid$X10)
+  )
+
+
+
+# Teste de multicolinearidade Gif (>1 indica multicolinearidade)
+car::vif(modelo_inicial)
+
+shapiro.test(modelo_inicial$residuals) 
+
+plot(modelo_inicial)
+```
+
+
+Agora avaliando através do steepwise, temos que o modelo que converge sobre o uso de mais variaveis
+
+
+```{r}
+modelo_inicial <- lm(X10 ~ X6+X7, data=dados_train)
+summary(modelo_inicial)
+
+modmin<-lm(X10 ~ 1, data=dados_train)
+modcompl<-lm(X10~ X1+X2+X3+X4+X5+X6+X8+X9+X11, data=dados_train)
+
+modfim  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="both",data=dados_train)
+summary(modfim)
+```
+
+agora com o teste linear geral, temos que existe diferença significatifva entre os modelos e acabamos com um moelo mais parcimanioso sem multicolineariade que é o caso do modtest
+
+```{r}
+anova(modelo_inicial,modfim) # modelo 2 é melhor 
+AIC(modelo_inicial,modfim) # quanto menoor melhor
+BIC(modelo_inicial,modfim)
+
+
+
+car::vif(modfim)
+shapiro.test(modfim$residuals) 
+
+
+modtest<- lm(X10 ~ X8+X4+X6, data=dados_train)
+car::vif(modtest)
+
+anova(modfim,modtest) 
+
+
+
+predictions <- modtest %>% predict(dados_valid)
+data.frame(
+  RMSE = RMSE(predictions, dados_valid$X10),
+  R2 = R2(predictions, dados_valid$X10)
+  )
+
+predictions <- modfim %>% predict(dados_valid)
+data.frame(
+  RMSE = RMSE(predictions, dados_valid$X10),
+  R2 = R2(predictions, dados_valid$X10)
+  )
+
+```
+
+
+
+
+
+
+## Duração da internação
+
+**__A duração da internação está associada a características do paciente, seu tratamento e do hospital__**
+
+**características do paciente:X2,**
+**seu tratamento:X4,X5**
+**hospital:X3,X6,X7,X9,X10, X11**
+
+
+
+\ \ Deseja-se estudar se a Duração da internação está associada a características do paciente, seu tratamento e do hospital, ou seja, a duração da internação, e  se há diferenças entre os  serviços disponíveis pelos hospitais.  Neste caso, a variável resposta é o número de enfermeira(o)s e as duas outras variáveis são explicativas. Para isso, faz-se necessário a aplicação da regressão linear múltipla realizada no script a seguir:
 
 
 
@@ -341,12 +434,6 @@ qqline(residuals(modcomp))
 <!--   # ---------------------------------------------------------- --> 
 \phantompart
 
-
-<!-- <!--   # ---------------------------------------------------------- -->  -->
-<!-- <!--   # Conclusão -->  -->
-<!-- <!--   # ---------------------------------------------------------- -->  -->
-<!-- ```{r child = 'textuais/conclusao.Rmd'} -->
-<!-- ``` -->
 
 <!--   # ---------------------------------------------------------- --> 
 <!--   # == ELEMENTOS PÓS-TEXTUAIS --> 

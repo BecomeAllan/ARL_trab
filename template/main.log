@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.2)  3 MAY 2022 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.2)  4 MAY 2022 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1075,28 +1075,28 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] (./main.toc) [7
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 185.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 187.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 188.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 190.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 219.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 221.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<img/Unb.jpg, id=93, 1445.4pt x 85.2786pt>
+<img/Unb.jpg, id=97, 1445.4pt x 85.2786pt>
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 225.
+Package pdftex.def Info: img/Unb.jpg  used on input line 222.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Class memoir Warning: The material used in the headers is too large
 (31.20901pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 225.
+(in both cases you will find help in the memoir manual). on input line 222.
 
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
@@ -1105,7 +1105,7 @@ Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 Class memoir Warning: The material used in the footer is too large
 (42.21004pt) for the given foot skip (30.0pt), it is recommended to
 either increase the foot skip or redesign the footer
-(in both cases you will find help in the memoir manual). on input line 225.
+(in both cases you will find help in the memoir manual). on input line 222.
 
 [8
 
@@ -1113,7 +1113,7 @@ either increase the foot skip or redesign the footer
  <./img/Unb.jpg>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 298.
+Package pdftex.def Info: img/Unb.jpg  used on input line 291.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
@@ -1126,72 +1126,68 @@ Overfull \hbox (45.68227pt too wide) in paragraph at lines 7--32
 )
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 341.
+Package pdftex.def Info: img/Unb.jpg  used on input line 352.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[10
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.2}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.341 \end{Shaded}
-                  ]
-<main_files/figure-latex/unnamed-chunk-6-1.pdf, id=114, 469.755pt x 325.215pt>
+[10]
+<main_files/figure-latex/unnamed-chunk-6-1.pdf, id=119, 469.755pt x 325.215pt>
 File: main_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use main_files/figure-latex/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-6-1.pdf  used on input line 345.
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-6-1.pdf  used on input line 356.
 (pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+<main_files/figure-latex/unnamed-chunk-7-1.pdf, id=120, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 368.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+
+Overfull \hbox (36.99103pt too wide) in paragraph at lines 368--369
+[][] 
+ []
+
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 357.
+Package pdftex.def Info: img/Unb.jpg  used on input line 372.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [11
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.1.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.357 \begin{Shaded}
-                     <./main_files/figure-latex/unnamed-chunk-6-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-7-1.pdf, id=125, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 380.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+l.372 ...{correlauxe7uxe3o-entre-as-variuxe1veis}}
+                                                  ]
+Overfull \vbox (50.03044pt too high) has occurred while \output is active []
+
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 396.
+Package pdftex.def Info: img/Unb.jpg  used on input line 372.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [12
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.396 
-       <./main_files/figure-latex/unnamed-chunk-7-1.pdf>]
-Overfull \hbox (1.95023pt too wide) in paragraph at lines 405--405
-[]\T1/lmtt/m/n/12 ##                                       Df  Sum Sq Mean Sq F value Pr(>F) 
- []
+l.372 ...{correlauxe7uxe3o-entre-as-variuxe1veis}}
+                                                   <./main_files/figure-latex/unnamed-chunk-6-1.pdf> <./main_files/figure-latex/unnamed-chunk-7-1.pdf>]
+<main_files/figure-latex/unnamed-chunk-8-1.pdf, id=141, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 401.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 411.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-Overfull \hbox (26.61522pt too wide) in paragraph at lines 406--406
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `                     \T1/lmtt/m/n/12 1 1820644 1820644 601.362 <2e-16 ***[] 
- []
-
-
-Overfull \hbox (14.29323pt too wide) in paragraph at lines 407--407
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `   \T1/lmtt/m/n/12 1   18550   18550   6.127 0.0148 *[] 
- []
-
-
-Overfull \hbox (94.57527pt too wide) in paragraph at lines 431--431
-[]\T1/lmtt/m/n/12 ##     I(\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 ^2) + \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 ` \T1/lmtt/m/n/12 *[] 
- []
-
+[13]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
 Package pdftex.def Info: img/Unb.jpg  used on input line 435.
@@ -1199,148 +1195,56 @@ Package pdftex.def Info: img/Unb.jpg  used on input line 435.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[13]
-Overfull \hbox (39.00024pt too wide) in paragraph at lines 439--439
-[]\T1/lmtt/m/n/12 ##                                                           Estimate Std. Error[] 
- []
-
-
-Overfull \hbox (38.98624pt too wide) in paragraph at lines 440--440
-[]\T1/lmtt/m/n/12 ## (Intercept)                                             -3.125e+01  3.698e+01[] 
- []
-
-
-Overfull \hbox (39.00024pt too wide) in paragraph at lines 441--441
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `                                       \T1/lmtt/m/n/12 4.217e-01  2.023e-01[] 
- []
-
-
-Overfull \hbox (38.97923pt too wide) in paragraph at lines 442--442
-[]\T1/lmtt/m/n/12 ## I(\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 ^2)                                 -5.006e-04  2.686e-04[] 
- []
-
-
-Overfull \hbox (39.00024pt too wide) in paragraph at lines 443--443
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `                     \T1/lmtt/m/n/12 2.212e+00  2.350e+00[] 
- []
-
-
-Overfull \hbox (38.98624pt too wide) in paragraph at lines 444--444
-[]\T1/lmtt/m/n/12 ## I(\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 ^2)               -3.646e-02  3.770e-02[] 
- []
-
-
-Overfull \hbox (38.97923pt too wide) in paragraph at lines 445--445
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 :\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `  \T1/lmtt/m/n/12 9.797e-03  5.920e-03[] 
- []
-
-
-Overfull \hbox (8.12523pt too wide) in paragraph at lines 446--446
-[]\T1/lmtt/m/n/12 ##                                                         t value Pr(>|t|)[] 
- []
-
-
-Overfull \hbox (8.10422pt too wide) in paragraph at lines 447--447
-[]\T1/lmtt/m/n/12 ## (Intercept)                                              -0.845   0.3999[] 
- []
-
-
-Overfull \hbox (20.46823pt too wide) in paragraph at lines 448--448
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `                                        \T1/lmtt/m/n/12 2.084   0.0395 *[] 
- []
-
-
-Overfull \hbox (20.46123pt too wide) in paragraph at lines 449--449
-[]\T1/lmtt/m/n/12 ## I(\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 ^2)                                  -1.864   0.0651 .[] 
- []
-
-
-Overfull \hbox (8.11122pt too wide) in paragraph at lines 450--450
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `                      \T1/lmtt/m/n/12 0.941   0.3486[] 
- []
-
-
-Overfull \hbox (8.10422pt too wide) in paragraph at lines 451--451
-[]\T1/lmtt/m/n/12 ## I(\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 ^2)                -0.967   0.3356[] 
- []
-
-
-Overfull \hbox (8.11122pt too wide) in paragraph at lines 452--452
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Número de leitos\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 :\TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Facilidades e serviços disponíveis\TS1/lmtt/m/n/12 `   \T1/lmtt/m/n/12 1.655   0.1009[] 
- []
-
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.435 ## 14 17 18  8
+                     <./main_files/figure-latex/unnamed-chunk-8-1.pdf>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 490.
+Package pdftex.def Info: img/Unb.jpg  used on input line 506.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[14]
-<main_files/figure-latex/unnamed-chunk-10-1.pdf, id=148, 469.755pt x 325.215pt>
+[15]
+<main_files/figure-latex/unnamed-chunk-10-1.pdf, id=164, 469.755pt x 325.215pt>
 File: main_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
 <use main_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 492.
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 516.
 (pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 492--493
+Overfull \hbox (36.99103pt too wide) in paragraph at lines 516--517
 [][] 
  []
 
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 498.
+Package pdftex.def Info: img/Unb.jpg  used on input line 521.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[15 <./main_files/figure-latex/unnamed-chunk-10-1.pdf>]
-Overfull \hbox (32.82524pt too wide) in paragraph at lines 509--509
-[]\T1/lmtt/m/n/12 ##                                           Df Sum Sq Mean Sq F value   Pr(>F) 
- []
+[16 <./main_files/figure-latex/unnamed-chunk-10-1.pdf>]
+<main_files/figure-latex/unnamed-chunk-11-1.pdf, id=174, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-11-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-11-1.pdf  used on input line 541.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 
-
-Overfull \hbox (32.77621pt too wide) in paragraph at lines 510--510
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Proporção de Raio-X de Tórax de Rotina\TS1/lmtt/m/n/12 `   \T1/lmtt/m/n/12 1   59.9   59.86  19.605 2.26e-05[] 
- []
-
-
-Overfull \hbox (32.81123pt too wide) in paragraph at lines 511--511
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Proporção de Culturas de Rotina\TS1/lmtt/m/n/12 `          \T1/lmtt/m/n/12 1   13.5   13.46   4.406   0.0381[] 
- []
-
-
-Overfull \hbox (63.70026pt too wide) in paragraph at lines 535--535
-[]\T1/lmtt/m/n/12 ## lm(formula = \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Duração da Internação\TS1/lmtt/m/n/12 ` \T1/lmtt/m/n/12 ~ \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Proporção de Raio-X de Tórax de Rotina\TS1/lmtt/m/n/12 ` \T1/lmtt/m/n/12 +[] 
- []
-
-
-Overfull \hbox (39.00024pt too wide) in paragraph at lines 543--543
-[]\T1/lmtt/m/n/12 ##                                          Estimate Std. Error t value Pr(>|t|)[] 
+Overfull \hbox (36.99103pt too wide) in paragraph at lines 541--542
+[][] 
  []
 
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 543.
+Package pdftex.def Info: img/Unb.jpg  used on input line 545.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[16]
-Overfull \hbox (38.94421pt too wide) in paragraph at lines 544--544
-[]\T1/lmtt/m/n/12 ## (Intercept)                               6.66147    0.71664   9.295 1.61e-15[] 
- []
-
-
-Overfull \hbox (38.97923pt too wide) in paragraph at lines 545--545
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Proporção de Raio-X de Tórax de Rotina\TS1/lmtt/m/n/12 `  \T1/lmtt/m/n/12 0.02935    0.00942   3.116  0.00234[] 
- []
-
-
-Overfull \hbox (38.97923pt too wide) in paragraph at lines 546--546
-[]\T1/lmtt/m/n/12 ## \TS1/lmtt/m/n/12 `\T1/lmtt/m/n/12 Proporção de Culturas de Rotina\TS1/lmtt/m/n/12 `         \T1/lmtt/m/n/12 0.03741    0.01782   2.099  0.03809[] 
- []
-
+[17 <./main_files/figure-latex/unnamed-chunk-11-1.pdf>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
 Package pdftex.def Info: img/Unb.jpg  used on input line 593.
@@ -1348,15 +1252,106 @@ Package pdftex.def Info: img/Unb.jpg  used on input line 593.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[17]
-<main_files/figure-latex/unnamed-chunk-12-1.pdf, id=167, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-12-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 595.
+[18]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 635.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[19]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 691.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[20]
+<main_files/figure-latex/unnamed-chunk-15-1.pdf, id=200, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-15-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-15-1.pdf  used on input line 707.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+<main_files/figure-latex/unnamed-chunk-15-2.pdf, id=201, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-15-2.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-15-2.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-15-2.pdf  used on input line 708.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+<main_files/figure-latex/unnamed-chunk-15-3.pdf, id=202, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-15-3.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-15-3.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-15-3.pdf  used on input line 709.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+<main_files/figure-latex/unnamed-chunk-15-4.pdf, id=203, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-15-4.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-15-4.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-15-4.pdf  used on input line 710.
 (pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 595--596
-[][] 
+Overfull \hbox (36.99103pt too wide) in paragraph at lines 707--711
+[][]
+ []
+
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 711.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[21 <./main_files/figure-latex/unnamed-chunk-15-1.pdf>]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 712.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[22 <./main_files/figure-latex/unnamed-chunk-15-2.pdf> <./main_files/figure-latex/unnamed-chunk-15-3.pdf>]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 735.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[23 <./main_files/figure-latex/unnamed-chunk-15-4.pdf>]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 777.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[24]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 819.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[25]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 876.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[26]
+File: img/Unb.jpg Graphic file (type jpg)
+<use img/Unb.jpg>
+Package pdftex.def Info: img/Unb.jpg  used on input line 935.
+(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
+
+Overfull \vbox (16.70901pt too high) has occurred while \output is active []
+
+[27]
+Underfull \hbox (badness 10000) in paragraph at lines 964--966
+[]\T1/lmr/bx/n/12 (+20) características do pa-ci-ente:X2, seu tra-ta-mento:X4,X5 hos-pi-
  []
 
 (./main.bbl (./main.brf)
@@ -1370,7 +1365,7 @@ Package pdftex.def Info: img/Unb.jpg  used on input line 3.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[18 <./main_files/figure-latex/unnamed-chunk-12-1.pdf>]
+[28]
 bibitemlist
 
 LaTeX Warning: Empty `thebibliography' environment on input line 8.
@@ -1378,19 +1373,19 @@ LaTeX Warning: Empty `thebibliography' environment on input line 8.
 )
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 608.
+Package pdftex.def Info: img/Unb.jpg  used on input line 984.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[19
+[29
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 608.
+(hyperref)                removing `\uppercase' on input line 984.
 
-[20
+[30
 
 
 ]
@@ -1398,24 +1393,24 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Class memoir Warning: The material used in the headers is too large
 (31.20901pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 617.
+(in both cases you will find help in the memoir manual). on input line 993.
 
 
 Class memoir Warning: The material used in the footer is too large
 (42.21004pt) for the given foot skip (30.0pt), it is recommended to
 either increase the foot skip or redesign the footer
-(in both cases you will find help in the memoir manual). on input line 617.
+(in both cases you will find help in the memoir manual). on input line 993.
 
 
 AED: lastpage setting LastPage
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 617.
+Package pdftex.def Info: img/Unb.jpg  used on input line 993.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[21
+[31
 
 ]
 \tf@lof=\write7
@@ -1432,18 +1427,18 @@ Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20051 strings out of 480245
- 328964 string characters out of 5892011
- 777515 words of memory out of 5000000
- 37427 multiletter control sequences out of 15000+600000
- 537196 words of font info for 130 fonts, out of 8000000 for 9000
+ 20116 strings out of 480245
+ 331046 string characters out of 5892011
+ 773663 words of memory out of 5000000
+ 37461 multiletter control sequences out of 15000+600000
+ 537748 words of font info for 136 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 87i,15n,91p,1001b,565s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (22 pages, 437390 bytes).
+ 87i,16n,91p,1001b,591s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on main.pdf (32 pages, 479491 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
- 253 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 41143 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 407 PDF objects out of 1000 (max. 8388607)
+ 329 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
+ 41184 words of extra memory for PDF output out of 42996 (max. 10000000)
 
