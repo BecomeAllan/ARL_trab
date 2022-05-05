@@ -17,7 +17,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, warning = F, message=FALSE)
 ```
 
 \selectlanguage{brazil}
@@ -109,10 +109,12 @@ datax$ID <- as.factor(datax$ID)
 # Dados ajustados
 # Dados ajustados
 data <- datax
+data_temp <- datax
+
 datax_ajusdet <-datax %>% select_if(is.numeric) %>% scale()
 datax[,paste0(colnames(datax_ajusdet), 'adj') ] <- datax_ajusdet
 
-data <- datax
+data 
 names(data) <- c('Número de Identificação', 'Duração da Internação', 'Idade', 'Risco de Infecção', 'Proporção de Culturas de Rotina', 'Proporção de Raio-X de Tórax de Rotina', 'Número de leitos', 'Filiação a Escola de Medicina', 'Região', 'Média diária de pacientes', 'Número de enfermeiro(s)', 'Facilidades e serviços disponíveis')
 ```
 
@@ -125,18 +127,23 @@ names(data) <- c('Número de Identificação', 'Duração da Internação', 'Ida
 
 Nome <- names(data)
 
-Código <- names(datax)
+Código <- names(data_temp)
 
 Descrição <- c('1-113', 'Duração média da internação de todos os pacientes no hospital (em dias)', 'Idade média dos pacientes', 'Probabilidade média estimada de adquirir infecção no hospital (em %)', 'Razão do número de culturas realizadas com relação ao número de pacientes sem sinais ou sintomas de infeção adquirida no hospital, vezes 100.', 'Razão do número de Raio-X de Tórax realizados com relação ao número de pacientes sem sinais ou sintomas de pneumonia, vezes 100.', 'Número médio de leitos no hospital durante o período de estudo', '1 – sim 2 – não', 'Região Geográfica, onde: 1 – NE 2- NC 3 – S e 4 – W', 'Número médio de pacientes no hospital por dia durante o período do estudo', 'Número médio de enfermeiros(as) de tempo-integral ou equivalente registrados e licenciados durante o período de estudo ( número de tempos integrais+metade do número de tempo parcial)', '% de 35 potenciais facilidades e serviços que são fornecidos pelo hospital')
 
 Classificação <- c('Qualitativa ordinal', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua', 'Qualitativa ordinal', 'Qualitativa nominal', 'Quantitativa contínua', 'Quantitativa contínua', 'Quantitativa contínua')
 
 library(knitr)
+library(kableExtra)
+
 knitr::kable(cbind(Nome,Código,Descrição, Classificação),
-             caption = 'Descrição dos códigos da tabela com a seguinte indentificação da variável.')
+             caption = 'Descrição dos códigos da tabela com a seguinte indentificação da variável.', 
+             align = "lclr")%>%
+  kable_styling(full_width = F)%>%
+  column_spec(3,width = "0.4in")
 ```
 
-  \ \ As etapas para o estudo da internação dos hospitais foram separadas em duas maneiras, a primeira é a construção e a segunda é a validação do modelo. Para a primeira etapa, foi selecionada uma amostra aleatória simples com 57 observações, para a segundo ficou o restante das observações que compõe o banco. Para as duas hipóteses procura-se um modelo regressivo linear múltiplo do tipo: 
+As etapas para o estudo da internação dos hospitais foram separadas em duas maneiras, a primeira é a construção e a segunda é a validação do modelo. Para a primeira etapa, foi selecionada uma amostra aleatória simples com 57 observações, para a segundo ficou o restante das observações que compõe o banco. Para as duas hipóteses procura-se um modelo regressivo linear múltiplo do tipo: 
 
 $$
       Y_i = \beta_0 + \beta_1  X_{i1} + \beta_2  X_{i2} + \dots + \beta_k  X_{ik}   + e_{i} \ , \forall \ \textit{i = 1,} \dots \textit{, n}
@@ -190,20 +197,6 @@ Analisando o gráfico acima, tem-se que as variáveis que estão nas  três extr
 
 
 
-
-
-
-```{r fig.cap="Gráfico de box-plot das variaváveis dos dados."}
-boxplot(datax)
-```
- 
-```{r}
-par(mfrow = c(1,2))
-
-datax %>% dplyr::select(X7) %>%  table(.) %>% barplot(xlab='X7')
-datax %>% dplyr::select(X8) %>%  table(.) %>% barplot(xlab='X8')
-```
-
  
 ### Correlação entre as variáveis 
 
@@ -221,13 +214,18 @@ datax %>% dplyr::select(X8) %>%  table(.) %>% barplot(xlab='X8')
 
 Para efetuar um modelo, separa-se o  banco em teste e treino no qual:
 
-```{r}
+```{r,results='asis'}
+library(xtable)
 set.seed(10)
 dados_train <- datax[sample(nrow(datax), 57, replace = F),] %>% data.frame()
 dados_valid <- anti_join(datax, dados_train, by="ID") %>% data.frame()
 
+
+print.xtable(xtable(table(dados_train$X8),caption = c(''),
+                    caption.placement = "top") )
 # inbalanced data
-table(dados_train$X8)
+
+
 ```
 
 
@@ -236,7 +234,7 @@ table(dados_train$X8)
 
 
 
-```{r}
+```{r,echo=FALSE}
 library(plotly)
 require(gridExtra)
 require(ggplot2)
@@ -278,9 +276,13 @@ g0+g1+plot_layout(guides = "collect")
 
 Para isso, faz-se necessário a aplicação da regressão linear múltipla. No qual avaliando o gráfico da dispersão de ordem da variável região $X8$ e o número de enfermeiros $X10$, verifica-se que não possui diferença significatíva na dispersão destes valores.
 
-```{r}
+```{r,results='asis'}
 boxplot(dados_train$X10~dados_train$X8)
-summary(aov(dados_train$X10~dados_train$X8))
+
+print.xtable(xtable(summary(aov(dados_train$X10~dados_train$X8)),caption = c(''),
+                    caption.placement = "top") )
+
+
 ```
 
 ### Pressupostos para um modelo inicial
@@ -298,9 +300,18 @@ $$\begin{aligned}
 no qual presume que o modelo é explicado pela "duração da internação" ($X1$), "Número de leitos" ($X6$), "Facilidades e serviços disponiveis" ($X11$) com a "Região".
 
 
-```{r}
+```{r,results='asis'}
+library(xtable)
+options(xtable.floating = T)
+options(xtable.timestamp = "")
+options(xtable.comment = FALSE)
+
 # Avaliando quais variaveis tem significância
-summary(aov(X10 ~ X1adj*X8+X6adj*X8+X11adj*X8+X7*X8, data=dados_train))
+k<-summary(aov(X10 ~ X1adj*X8+X6adj*X8+X11adj*X8+X7*X8, data=dados_train))
+
+
+print.xtable(xtable(k,caption = c('Modelo 1'),
+                    caption.placement = "top") )
 ```
 
 agora os resultados obtidos pela anova, temos que pelos testes, deu significativo as variáveis explicativas sem interação e a interação com da região $X8$ com a variávei $X1$ e as outras variáveis foram descartadas por estar perto do limite do p-value 0.05.
@@ -315,25 +326,51 @@ $$\begin{aligned}
 temos que
 
 
-```{r}
+```{r,results='asis'}
 table(dados_train$X8)
 
 modelo_inicial <- lm(X10 ~ X1adj*X8 + X6adj +X7*X8, data=dados_train)
-summary(modelo_inicial)
+
+
+print.xtable(xtable(summary(modelo_inicial),caption = c('$X10 = X1adj*X8 + X6adj +X7*X8$'),
+                    caption.placement = "top") )
+
+
+
 ```
 
 com valor do F-statistics, para o teste linear geral, percebe-se que o teste de regressão é significativo, indicando que há regressão nesses dados, e analizando o modelo, apenas  x6 tem diferenças significativas, podendo descartar acabando com um modelo do tipo, no qual rejeitamos a normalidade, assim transformando a variável através do boxcox
 
-```{r}
+```{r,results='asis'}
 modelo_inicial <- lm(X10 ~  X6adj+X7, data=dados_train)
-summary(modelo_inicial)
-shapiro.test(modelo_inicial$residuals)
+
+print.xtable(xtable(summary(modelo_inicial),caption = c('$X10 =  X6adj+X7$'),
+                    caption.placement = "top") )
+
+
+print.xtable(xtable(summary(modelo_inicial),caption = c('$X10 =  X6adj+X7$'),
+                    caption.placement = "top") )
+
+
 ```
+
+```{r,results='asis'}
+k<-shapiro.test(modelo_inicial$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+
+```
+
+
+
+
 
 como foi rejeitada o teste de normalidade, utilizamos uma transformação boxcox para criar o novo modelo, onde seque se que
 
 
-```{r}
+```{r,results='asis'}
 library(MASS)
 k<-boxcox(modelo_inicial)
 lambda<- k$x[which.max(k$y)]
@@ -341,9 +378,19 @@ lambda<- k$x[which.max(k$y)]
 dados_train['X10_cox'] <- (dados_train$X10^lambda-1)/lambda
 
 modelo_inicial_cox <- lm(X10_cox ~X6adj+X7, data=dados_train)
-summary(modelo_inicial_cox)
-shapiro.test(modelo_inicial_cox$residuals)
+
+print.xtable(xtable(summary(modelo_inicial_cox),caption = c('$X10_cox ~X6adj+X7$'),
+                    caption.placement = "top") )
 ```
+
+```{r,results='asis'}
+k<-shapiro.test(modelo_inicial_cox$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+```
+
 
 
 agora avalindo este modelo temos que o erro medio das previsões é baixo e o R2 no banco de teste é alto, assim sendo um bom modelo para começar e avaliar com as suposições do hospital
@@ -363,11 +410,27 @@ plot(modelo_inicial_cox)
 
 Retirando os outliers temos que 
 
-```{r}
-modelo_inicial_cox <- lm(X10_cox ~  X6adj+X7, data=dados_train[-c(18,48,46),])
-summary(modelo_inicial_cox)
-shapiro.test(modelo_inicial_cox$residuals)
+```{r,results='asis'}
 
+modelo_inicial_cox <- lm(X10_cox ~  X6adj+X7, data=dados_train[-c(18,48,46),])
+
+
+
+print.xtable(xtable(summary(modelo_inicial_cox),caption = c('$X10_cox =  X6adj+X7$'),
+                    caption.placement = "top") )
+```
+
+```{r,results='asis'}
+k<-shapiro.test(modelo_inicial_cox$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+
+```
+
+
+```{r}
 par(mfrow=c(2,2))
 plot(modelo_inicial_cox)
 ```
@@ -375,13 +438,22 @@ plot(modelo_inicial_cox)
 
 Agora avalindo o modelo no banco de teste, temos que a raiz do erro quadratico médio e dado por
 
-```{r}
+
+
+
+```{r,results='asis'}
 # predições
 predictions <- modelo_inicial_cox %>% predict(dados_valid)
-data.frame(
+
+
+k<-data.frame(
   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
   R2 = R2(predictions, ((dados_valid$X10)^lambda-1)/lambda)
   )
+
+print.xtable(xtable(k,caption = c(''),
+                    caption.placement = "top") )
+
 ```
 
 
@@ -392,69 +464,153 @@ data.frame(
 Agora avaliando através do steepwise, temos que o modelo que converge sobre o uso de mais variaveis
 
 
-```{r}
+```{r,results='asis'}
+
 modmin<-lm(X10_cox ~ X6adj+X7, data=dados_train[-c(18,48,46),])
 
 modcompl<-lm(X10_cox~ X1adj+X2adj+X3adj+X4adj+X5adj+X6adj+X7+X8+X9adj+X11adj, data=dados_train[-c(18,48,46),])
 
 modfim  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="both",data=dados_train[-c(18,48,46),], trace = F)
-summary(modfim)
-shapiro.test(modfim$residuals)
+
+
+
+print.xtable(xtable(summary(modfim),caption = c('summary(modfim)'),
+                    caption.placement = "top") )
+
+
+
+
+```
+
+```{r,results='asis'}
+
+k<-shapiro.test(modfim$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+
 ```
 
 agora com o teste linear geral, temos que existe diferença significatifva entre os modelos e acabamos com um modelo mais parcimanioso sem multicolineariade que é o caso do modtest
 
-```{r}
-anova(modelo_inicial_cox,modfim) # modelo 2 é melhor
-AIC(modelo_inicial_cox,modfim)
+```{r,results='asis'}
+# modelo 2 é melhor
+print.xtable(xtable(anova(modelo_inicial_cox,modfim)))
+```
+
+```{r,results='asis'}
+ # modelo 2 é melhor
+print.xtable(xtable(AIC(modelo_inicial_cox,modfim)))
 ```
 
 
 Assim, o modelo 2 apresenta melhor desenpenho considerando o RSS, e o teste linear geral possui diferença significante, ou seja, o modelos são diferentes, agora avalindo este modelo `modfim`, temos que
 
-```{r}
+```{r,results='asis'}
 # quanto menoor melhor
-car::vif(modfim)
+
+
+print.xtable(xtable(as.data.frame(car::vif(modfim))
+))
+
+
 ```
 
 para os parametros do $X6$ e $X9$, encontrou grande correlação entre elas, e para avaliar que o modelo não possua colinearidade, temos que
 
 
-```{r}
+
+```{r,results='asis'}
+# quanto menoor melhor
+
+
+
 modsem9<-lm(X10_cox ~ X6adj+X7+X3adj+X2adj+X11adj+X1adj+X5adj, data=dados_train[-c(18,48,46),])
-summary(modsem9)
+
+print.xtable(xtable(summary(modsem9)))
+
+
+
+
 modsem9<-lm(X10_cox ~ X6adj+X3adj, data=dados_train[-c(18,48,46),])
-summary(modsem9)
-car::vif(modsem9)
-shapiro.test(modsem9$residuals)
+print.xtable(xtable(summary(modsem9)))
+
+
+
+print.xtable(xtable(as.data.frame(car::vif(modsem9))))
+
+
+
+k<-shapiro.test(modsem9$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+
+
+
 
 predictions <- modsem9 %>% predict(dados_valid)
-data.frame(
+k<-data.frame(
   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
   )
+
+
+print.xtable(xtable(k,caption = c(''),
+                    caption.placement = "top") )
+
+
+
+
+
+
 
 
 
 modsem6<-lm(X10_cox ~ X9adj+X7+X3adj+X2adj+X11adj+X1adj+X5adj, data=dados_train[-c(18,48,46),])
-summary(modsem6)
+print.xtable(xtable(summary(modsem6)))
+
+
+
 modsem6<-lm(X10_cox ~ X9adj+X3adj, data=dados_train[-c(18,48,46),])
-summary(modsem6)
-car::vif(modsem6)
-shapiro.test(modsem6$residuals)
+print.xtable(xtable(summary(modsem6)))
+
+
+print.xtable(xtable(as.data.frame(
+car::vif(modsem6))))
+
+
+
+k<-shapiro.test(modsem6$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+
+
 
 
 predictions <- modsem6 %>% predict(dados_valid)
-data.frame(
+k<-data.frame(
   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
   )
 
 
+print.xtable(xtable(k,caption = c(''),
+                    caption.placement = "top") )
 
-anova(modfim,modsem6)
-anova(modfim,modsem9)
-AIC(modsem9,modsem6)
+
+
+
+
+print.xtable(xtable(anova(modfim,modsem6)))
+print.xtable(xtable(anova(modfim,modsem9)))
+print.xtable(xtable(AIC(modsem9,modsem6)))
+
+
 ```
 
 ```{r}
@@ -476,12 +632,13 @@ assim, no final foi escolhido o modelo `modsem9` no qual os pressupostos são at
 Agora como o modelo formulado pelo hospital temos que,
 
 
-```{r}
+```{r,results='asis'}
 mod_sec<- lm(formula = X10_cox ~ X6adj+I(X6adj^2) + X3adj+I(X3adj^2)+X8 , data = dados_train[-c(18,48, 46), ])
-summary(mod_sec)
+
+print.xtable(xtable(summary(mod_sec)))
 
 mod_sec<- lm(formula = X10_cox ~ X6adj + X3adj+I(X3adj^2) , data = dados_train[-c(18,48, 46), ])
-summary(mod_sec)
+print.xtable(xtable(summary(mod_sec)))
 ```
 
 ```{r}
@@ -491,32 +648,54 @@ plot(mod_sec)
 
 
 
-```{r}
-car::vif(mod_sec)
-shapiro.test(mod_sec$residuals)
+```{r,results='asis'}
+print.xtable(xtable(as.data.frame(
+car::vif(mod_sec))))
+
+
+
+k<-shapiro.test(mod_sec$residuals)
+
+k<- cbind(k$method, k$p.value)
+
+print.xtable(xtable(k))
+
+
+
+
 
 predictions <- mod_sec %>% predict(dados_valid)
 
-data.frame(
+k<-data.frame(
   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
   )
+
+print.xtable(xtable(k,caption = c(''),
+                    caption.placement = "top") )
+
+
 
 predictions <- modsem9 %>% predict(dados_valid)
-data.frame(
+k<-data.frame(
   RMSE = RMSE(predictions, (dados_valid$X10^lambda-1)/lambda),
   R2 = R2(predictions, (dados_valid$X10^lambda-1)/lambda)
   )
 
 
+print.xtable(xtable(k,caption = c(''),
+                    caption.placement = "top") )
+
+
 ```
 
 
 
-```{r}
-anova(modsem9,mod_sec)
-AIC(modsem9,mod_sec)
+```{r,results='asis'}
+print.xtable(xtable(anova(modsem9,mod_sec)))
+print.xtable(xtable(AIC(modsem9,mod_sec)))
 ```
+
 Agora avaliando o teste linear geral e o AIC, temos que o modelo proposto com diferença significativa, e assim,
 o modelo escolhido foi o que possui ordem quadrática e consegue explicar boa parte da variabilidade do número de enfermeiros.
 
