@@ -102,21 +102,21 @@ names(data) <- c('Número de Identificação', 'Duração da Internação', 'Ida
 # Metodologia
 
 
-A metodologia neste estudo usa técnicas de modelagem de regressão linear, na tentativa de construir modelos para a predição do número de enfermeira(o)s e a duração da internação. Dentre a proposta do estudo, para avaliar entre diferentes tipos de modelos empregados, utiliza-se métodos de seleção de variáveis como "Feedfoward", "Backfoward" e "Stepwise" juntamente com métricas como RSS (Residual Sum of Squares), cp de mallows ($c(p)$), Akaike information criterion (AIC) e testes estatísticos para avaliação destes.
+ \ \ A metodologia neste estudo usa técnicas de modelagem de regressão linear, na tentativa de construir modelos para a predição do número de enfermeira(o)s e a duração da internação. Dentre a proposta do estudo, para avaliar entre diferentes tipos de modelos empregados, utiliza-se métodos de seleção de variáveis como "Feedfoward", "Backfoward" e "Stepwise" juntamente com métricas como RSS (Residual Sum of Squares), cp de mallows ($c(p)$), Akaike information criterion (AIC) e testes estatísticos para avaliação destes.
 
 
-Para a avaliar os pressupostos dos modelos lineres, como a homocedasticidade, normalidade e multicolinearidade, o uso da visualização dos gráficos de residuos vs os valores preditos para avaliar a homocedasticidade, o teste de normalidade de Shapiro-Wilk e para multicolinearidade o uso do Variance inflation factor (VIF) ou GVIF para o caso generalizado. Sobre pontos influentes na estimação dos parâmetros, a utilização dos DFBetas e DFFits e correlação de pearson também foram utilizadas.
+ \ \ Para a avaliar os pressupostos dos modelos lineres, como a homocedasticidade, normalidade e multicolinearidade, o uso da visualização dos gráficos de residuos vs os valores preditos para avaliar a homocedasticidade, o teste de normalidade de Shapiro-Wilk e para multicolinearidade o uso do Variance inflation factor (VIF) ou GVIF para o caso generalizado. Sobre pontos influentes na estimação dos parâmetros, a utilização dos DFBetas e DFFits e correlação de pearson também foram utilizadas.
 
-A qualidade do modelo é avaliada sobre os dados de validação com a métrica da raiz do erro quadrático medio (RSME) dado por
+ \ \ A qualidade do modelo é avaliada sobre os dados de validação com a métrica da raiz do erro quadrático medio (RSME) dado por
 
 $$RMSE={\sqrt{\sum(\hat{Y}-Y)^2}\over N}$$
 que avalia o desvio padrão médio das predições do modelo regressão $\hat{Y}$, sobre a variável resposta $Y$.
 
-O programa utilizado para analisar os dados, modelar e testar com base nos dados será o R Studio, versão 4.2.0.
+ \ \ O programa utilizado para analisar os dados, modelar e testar com base nos dados será o R Studio, versão 4.2.0.
 
 \chapter{Análise}
 
-Sobre a Tabela 1, temos a descrição das variáveis disponíveis pelo banco de dados disponibiilizado pelo hospital, no qual apenas 2 variáveis, "Filiação a Escola de Medicina" ($X7$) e "Região" ($X8$) são variáveis qualitativas.
+ \ \ Sobre a Tabela 1, temos a descrição das variáveis disponíveis pelo banco de dados disponibiilizado pelo hospital, no qual apenas 2 variáveis, "Filiação a Escola de Medicina" ($X7$) e "Região" ($X8$) são variáveis qualitativas.
 
 ```{r}
 # Tabela de nomes X1: Nome variavel
