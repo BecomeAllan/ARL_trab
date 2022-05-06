@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.2)  5 MAY 2022 19:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.5.2)  6 MAY 2022 05:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -662,19 +662,6 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
-) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2022/04/12 4.2 verbatim text (tvz,hv)
-\FV@CodeLineNo=\count352
-\FV@InFile=\read4
-\FV@TabBox=\box59
-\c@FancyVerbLine=\count353
-\FV@StepNumber=\count354
-\FV@OutFile=\write4
-) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip262
-\fb@frw=\dimen257
-\fb@frh=\dimen258
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -686,8 +673,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
 )
-\Gin@req@height=\dimen259
-\Gin@req@width=\dimen260
+\Gin@req@height=\dimen257
+\Gin@req@width=\dimen258
 ) (./sty/pacotes.sty (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/cmap/cmap.sty
 Package: cmap 2021/02/06 v1.0j CMap support: searchable PDF
 
@@ -699,27 +686,28 @@ Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
-\c@tracingmulticols=\count355
-\mult@box=\box60
-\multicol@leftmargin=\dimen261
-\c@unbalance=\count356
-\c@collectmore=\count357
-\doublecol@number=\count358
-\multicoltolerance=\count359
-\multicolpretolerance=\count360
-\full@width=\dimen262
-\page@free=\dimen263
-\premulticols=\dimen264
-\postmulticols=\dimen265
-\multicolsep=\skip263
-\multicolbaselineskip=\skip264
-\partial@page=\box61
-\last@line=\box62
-\maxbalancingoverflow=\dimen266
-\mult@rightbox=\box63
-\mult@grightbox=\box64
-\mult@firstbox=\box65
-\mult@gfirstbox=\box66
+\c@tracingmulticols=\count352
+\mult@box=\box59
+\multicol@leftmargin=\dimen259
+\c@unbalance=\count353
+\c@collectmore=\count354
+\doublecol@number=\count355
+\multicoltolerance=\count356
+\multicolpretolerance=\count357
+\full@width=\dimen260
+\page@free=\dimen261
+\premulticols=\dimen262
+\postmulticols=\dimen263
+\multicolsep=\skip262
+\multicolbaselineskip=\skip263
+\partial@page=\box60
+\last@line=\box61
+\maxbalancingoverflow=\dimen264
+\mult@rightbox=\box62
+\mult@grightbox=\box63
+\mult@firstbox=\box64
+\mult@gfirstbox=\box65
+\@tempa=\box66
 \@tempa=\box67
 \@tempa=\box68
 \@tempa=\box69
@@ -755,99 +743,98 @@ Package: multicol 2021/10/28 v1.9b multicolumn formatting (FMi)
 \@tempa=\box99
 \@tempa=\box100
 \@tempa=\box101
-\@tempa=\box102
-\c@minrows=\count361
-\c@columnbadness=\count362
-\c@finalcolumnbadness=\count363
-\last@try=\dimen267
-\multicolovershoot=\dimen268
-\multicolundershoot=\dimen269
-\mult@nat@firstbox=\box103
-\colbreak@box=\box104
-\mc@col@check@num=\count364
+\c@minrows=\count358
+\c@columnbadness=\count359
+\c@finalcolumnbadness=\count360
+\last@try=\dimen265
+\multicolovershoot=\dimen266
+\multicolundershoot=\dimen267
+\mult@nat@firstbox=\box102
+\colbreak@box=\box103
+\mc@col@check@num=\count361
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
-\multirow@colwidth=\skip265
-\multirow@cntb=\count365
-\multirow@dima=\skip266
-\bigstrutjot=\dimen270
+\multirow@colwidth=\skip264
+\multirow@cntb=\count362
+\multirow@dima=\skip265
+\bigstrutjot=\dimen268
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
-\LTleft=\skip267
-\LTright=\skip268
-\LTpre=\skip269
-\LTpost=\skip270
-\LTchunksize=\count366
-\LTcapwidth=\dimen271
-\LT@head=\box105
-\LT@firsthead=\box106
-\LT@foot=\box107
-\LT@lastfoot=\box108
-\LT@gbox=\box109
-\LT@cols=\count367
-\LT@rows=\count368
-\c@LT@tables=\count369
-\c@LT@chunks=\count370
+\LTleft=\skip266
+\LTright=\skip267
+\LTpre=\skip268
+\LTpost=\skip269
+\LTchunksize=\count363
+\LTcapwidth=\dimen269
+\LT@head=\box104
+\LT@firsthead=\box105
+\LT@foot=\box106
+\LT@lastfoot=\box107
+\LT@gbox=\box108
+\LT@cols=\count364
+\LT@rows=\count365
+\c@LT@tables=\count366
+\c@LT@chunks=\count367
 \LT@p@ftn=\toks34
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count371
+\c@float@type=\count368
 \float@exts=\toks35
-\float@box=\box110
+\float@box=\box109
 \@float@everytoks=\toks36
-\@floatcapt=\box111
+\@floatcapt=\box110
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 Package: ragged2e 2021/12/15 v3.1 ragged2e Package
-\CenteringLeftskip=\skip271
-\RaggedLeftLeftskip=\skip272
-\RaggedRightLeftskip=\skip273
-\CenteringRightskip=\skip274
-\RaggedLeftRightskip=\skip275
-\RaggedRightRightskip=\skip276
-\CenteringParfillskip=\skip277
-\RaggedLeftParfillskip=\skip278
-\RaggedRightParfillskip=\skip279
-\JustifyingParfillskip=\skip280
-\CenteringParindent=\skip281
-\RaggedLeftParindent=\skip282
-\RaggedRightParindent=\skip283
-\JustifyingParindent=\skip284
+\CenteringLeftskip=\skip270
+\RaggedLeftLeftskip=\skip271
+\RaggedRightLeftskip=\skip272
+\CenteringRightskip=\skip273
+\RaggedLeftRightskip=\skip274
+\RaggedRightRightskip=\skip275
+\CenteringParfillskip=\skip276
+\RaggedLeftParfillskip=\skip277
+\RaggedRightParfillskip=\skip278
+\JustifyingParfillskip=\skip279
+\CenteringParindent=\skip280
+\RaggedLeftParindent=\skip281
+\RaggedRightParindent=\skip282
+\JustifyingParindent=\skip283
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2021/09/03 v1.2n Refers to last page's name (HMM; JPG)
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.sty (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2022-04-29 L3 programming layer (loader) 
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-04-20 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count372
-\l__pdf_internal_box=\box112
+\l__color_backend_stack_int=\count369
+\l__pdf_internal_box=\box111
 ))
 Package: l3keys2e 2022-01-12 LaTeX2e option processing using LaTeX3 keys
 )
 Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
-\g__lipsum_par_int=\count373
-\l__lipsum_a_int=\count374
-\l__lipsum_b_int=\count375
+\g__lipsum_par_int=\count370
+\l__lipsum_a_int=\count371
+\l__lipsum_b_int=\count372
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex)) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/backref.sty
 Package: backref 2021/02/04 v1.41 Bibliographical back referencing
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2cite.sty
 Package: abntex2cite 2018/11/24 v-1.9.7 abnTeX2
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/abntex2/abntex2abrev.sty)
-\minimumbiblabelwidth=\skip285
-\ABCIauxlen=\skip286
-\c@ABCIaux=\count376
-\c@ABCImax=\count377
+\minimumbiblabelwidth=\skip284
+\ABCIauxlen=\skip285
+\c@ABCIaux=\count373
+\c@ABCImax=\count374
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
 Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 )
-\biblabelsep=\skip287
+\biblabelsep=\skip286
 LaTeX Info: Redefining \newblock on input line 591.
 LaTeX Info: Redefining \cite on input line 618.
 \ABCItoken=\toks37
 )
-\main@idxfile=\write5
-\openout5 = `main.idx'.
+\main@idxfile=\write4
+\openout4 = `main.idx'.
 
 Writing index file main.idx 
 
@@ -925,16 +912,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Info: Option `colorlinks' set `true' on input line 69.
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/wrapfig/wrapfig.sty
-\wrapoverhang=\dimen272
-\WF@size=\dimen273
-\c@WF@wrappedlines=\count378
-\WF@box=\box113
+\wrapoverhang=\dimen270
+\WF@size=\dimen271
+\c@WF@wrappedlines=\count375
+\WF@box=\box112
 \WF@everypar=\toks38
 Package: wrapfig 2003/01/31  v 3.6
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 \everycr=\toks39
-\minrowclearance=\skip288
+\minrowclearance=\skip287
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
@@ -945,36 +932,36 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 Package: tabu 2019/01/11 v2.9 - flexible LaTeX tabulars (FC+tabu-fixed)
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box114
-\sift@deathcycles=\count379
-\@vwid@loff=\dimen274
-\@vwid@roff=\dimen275
+\@vwid@box=\box113
+\sift@deathcycles=\count376
+\@vwid@loff=\dimen272
+\@vwid@roff=\dimen273
 )
-\c@taburow=\count380
-\tabu@nbcols=\count381
-\tabu@cnt=\count382
-\tabu@Xcol=\count383
-\tabu@alloc=\count384
-\tabu@nested=\count385
-\tabu@target=\dimen276
-\tabu@spreadtarget=\dimen277
-\tabu@naturalX=\dimen278
-\tabucolX=\dimen279
-\tabu@Xsum=\dimen280
-\extrarowdepth=\dimen281
-\abovetabulinesep=\dimen282
-\belowtabulinesep=\dimen283
-\tabustrutrule=\dimen284
+\c@taburow=\count377
+\tabu@nbcols=\count378
+\tabu@cnt=\count379
+\tabu@Xcol=\count380
+\tabu@alloc=\count381
+\tabu@nested=\count382
+\tabu@target=\dimen274
+\tabu@spreadtarget=\dimen275
+\tabu@naturalX=\dimen276
+\tabucolX=\dimen277
+\tabu@Xsum=\dimen278
+\extrarowdepth=\dimen279
+\abovetabulinesep=\dimen280
+\belowtabulinesep=\dimen281
+\tabustrutrule=\dimen282
 \tabu@thebody=\toks40
 \tabu@footnotes=\toks41
-\tabu@box=\box115
-\tabu@arstrutbox=\box116
-\tabu@hleads=\box117
-\tabu@vleads=\box118
-\tabu@cellskip=\skip289
+\tabu@box=\box114
+\tabu@arstrutbox=\box115
+\tabu@hleads=\box116
+\tabu@vleads=\box117
+\tabu@cellskip=\skip288
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
-\@tempboxb=\box119
+\@tempboxb=\box118
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
@@ -982,45 +969,45 @@ Package: environ 2014/05/04 v0.3 A new way to define environments
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\TPTL@width=\skip290
+\TPTL@width=\skip289
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
-\UL@box=\box120
-\UL@hyphenbox=\box121
-\UL@skip=\skip291
+\UL@box=\box119
+\UL@hyphenbox=\box120
+\UL@skip=\skip290
 \UL@hook=\toks42
-\UL@height=\dimen285
-\UL@pe=\count386
-\UL@pixel=\dimen286
-\ULC@box=\box122
+\UL@height=\dimen283
+\UL@pe=\count383
+\UL@pixel=\dimen284
+\ULC@box=\box121
 Package: ulem 2019/11/18
-\ULdepth=\dimen287
+\ULdepth=\dimen285
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
-\rotheadsize=\dimen288
-\c@nlinenum=\count387
+\rotheadsize=\dimen286
+\c@nlinenum=\count384
 \TeXr@lab=\toks43
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 133.
-LaTeX Font Info:    ... okay on input line 133.
-Package hyperref Info: Link coloring ON on input line 133.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 93.
+LaTeX Font Info:    ... okay on input line 93.
+Package hyperref Info: Link coloring ON on input line 93.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1028,28 +1015,28 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count388
+\c@section@level=\count385
 )
 Redoing nameref's sectioning
 Redoing nameref's label
-LaTeX Info: Redefining \nameref on input line 133.
-LaTeX Info: Redefining \ref on input line 133.
-LaTeX Info: Redefining \pageref on input line 133.
-LaTeX Info: Redefining \nameref on input line 133.
-\myptabbox=\box123
-\myptabboxwidth=\skip292
-LaTeX Info: Redefining \microtypecontext on input line 133.
-Package microtype Info: Applying patch `item' on input line 133.
-Package microtype Info: Applying patch `toc' on input line 133.
-Package microtype Info: Applying patch `eqnum' on input line 133.
-Package microtype Info: Applying patch `footnote' on input line 133.
+LaTeX Info: Redefining \nameref on input line 93.
+LaTeX Info: Redefining \ref on input line 93.
+LaTeX Info: Redefining \pageref on input line 93.
+LaTeX Info: Redefining \nameref on input line 93.
+\myptabbox=\box122
+\myptabboxwidth=\skip291
+LaTeX Info: Redefining \microtypecontext on input line 93.
+Package microtype Info: Applying patch `item' on input line 93.
+Package microtype Info: Applying patch `toc' on input line 93.
+Package microtype Info: Applying patch `eqnum' on input line 93.
+Package microtype Info: Applying patch `footnote' on input line 93.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 133.
+LaTeX Info: Redefining \showhyphens on input line 93.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1063,13 +1050,13 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 133.
+(lastpage)             ! on input line 93.
 <img/unb_name_bw.jpg, id=4, 301.125pt x 263.48438pt>
 File: img/unb_name_bw.jpg Graphic file (type jpg)
 <use img/unb_name_bw.jpg>
-Package pdftex.def Info: img/unb_name_bw.jpg  used on input line 139.
+Package pdftex.def Info: img/unb_name_bw.jpg  used on input line 99.
 (pdftex.def)             Requested size: 85.35744pt x 74.68776pt.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 139.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 99.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<t1.cmap>>
@@ -1082,37 +1069,37 @@ Package microtype Info: Loading generic protrusion settings for font family
 {c:/Users/allan/AppData/Roaming/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./img/unb_name_bw.jpg>]
 File: img/unb_name_bw.jpg Graphic file (type jpg)
 <use img/unb_name_bw.jpg>
-Package pdftex.def Info: img/unb_name_bw.jpg  used on input line 142.
+Package pdftex.def Info: img/unb_name_bw.jpg  used on input line 102.
 (pdftex.def)             Requested size: 85.35744pt x 74.68776pt.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 142.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 102.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )<<ot1.cmap>>
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 142.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 102.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 142.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 102.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 142.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 102.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 142.
+(Font)              <14.4> on input line 102.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 142.
+(Font)              <10> on input line 102.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 142.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 142.
+(Font)              <7> on input line 102.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 102.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 142.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 102.
 (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1121,7 +1108,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.142 
+l.102 
        [1
 
 
@@ -1146,24 +1133,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 ] (./main.toc) [7
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 208.
-(c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 215.
-(c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmtt.fd
-File: ts1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-<img/Unb.jpg, id=136, 1445.4pt x 85.2786pt>
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 179.
+
+<img/Unb.jpg, id=153, 1445.4pt x 85.2786pt>
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 228.
+Package pdftex.def Info: img/Unb.jpg  used on input line 179.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Class memoir Warning: The material used in the headers is too large
 (31.20901pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 228.
+(in both cases you will find help in the memoir manual). on input line 179.
 
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
@@ -1172,91 +1156,15 @@ Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 Class memoir Warning: The material used in the footer is too large
 (42.21004pt) for the given foot skip (30.0pt), it is recommended to
 either increase the foot skip or redesign the footer
-(in both cases you will find help in the memoir manual). on input line 228.
+(in both cases you will find help in the memoir manual). on input line 179.
 
 [8
 
 
  <./img/Unb.jpg>]
-Overfull \hbox (18.97322pt too wide) in paragraph at lines 236--236
-[]|\T1/lmr/m/n/12 (-20) Descrição|  
- []
-
-
-Overfull \hbox (13.15237pt too wide) in paragraph at lines 240--240
-[]|\T1/lmr/m/n/12 (-20) Duração 
- []
-
-
-Overfull \hbox (40.9809pt too wide) in paragraph at lines 244--244
-[]|\T1/lmr/m/n/12 (-20) Probabilidade 
- []
-
-
-Overfull \hbox (1.95653pt too wide) in paragraph at lines 246--246
-[]|\T1/lmr/m/n/12 (-20) Razão 
- []
-
-
-Overfull \hbox (1.95653pt too wide) in paragraph at lines 248--248
-[]|\T1/lmr/m/n/12 (-20) Razão 
- []
-
-
-Overfull \hbox (11.07086pt too wide) in paragraph at lines 250--250
-[]|\T1/lmr/m/n/12 (-20) Número 
- []
-
-
-Overfull \hbox (5.15524pt too wide) in paragraph at lines 254--254
-[]|\T1/lmr/m/n/12 (-20) Região 
- []
-
-
-Overfull \hbox (11.07086pt too wide) in paragraph at lines 256--256
-[]|\T1/lmr/m/n/12 (-20) Número 
- []
-
-
-Overfull \hbox (11.07086pt too wide) in paragraph at lines 258--258
-[]|\T1/lmr/m/n/12 (-20) Número 
- []
-
-
-Overfull \hbox (3.75052pt too wide) in paragraph at lines 258--258
-\T1/lmr/m/n/12 (-20) ros(as) 
- []
-
-
-Overfull \hbox (4.64153pt too wide) in paragraph at lines 258--258
-\T1/lmr/m/n/12 (-20) tempo- 
- []
-
-
-Overfull \hbox (9.14934pt too wide) in paragraph at lines 258--258
-\T1/lmr/m/n/12 (-20) integral 
- []
-
-
-Overfull \hbox (40.24641pt too wide) in paragraph at lines 258--258
-\T1/lmr/m/n/12 (-20) grais+metade 
- []
-
-
-Overfull \hbox (2.76541pt too wide) in paragraph at lines 258--258
-\T1/lmr/m/n/12 (-20) tempo 
- []
-
-
-LaTeX Warning: Float too large for page by 2355.14359pt on input line 263.
-
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 278.
-(c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 293.
+Package pdftex.def Info: img/Unb.jpg  used on input line 185.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
@@ -1264,501 +1172,368 @@ Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 [9]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 293.
+Package pdftex.def Info: img/Unb.jpg  used on input line 221.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [10
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.293 
-      ]
-<main_files/figure-latex/unnamed-chunk-6-1.pdf, id=159, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-6-1.pdf  used on input line 307.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 307--308
-[][] 
- []
-
-(./Tables/all_box_blox.tex
-Overfull \hbox (45.68216pt too wide) in paragraph at lines 7--32
- [][] 
- []
-
-)
+]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 317.
+Package pdftex.def Info: img/Unb.jpg  used on input line 221.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[11 <./main_files/figure-latex/unnamed-chunk-6-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-7-1.pdf, id=171, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-7-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 325.
+[11]
+<main_files/figure-latex/unnamed-chunk-6-1.pdf, id=178, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-6-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-6-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-6-1.pdf  used on input line 233.
 (pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 333.
+Package pdftex.def Info: img/Unb.jpg  used on input line 242.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [12
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.333 \begin{Shaded}
-                    
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.333 \begin{Shaded}
-                     <./main_files/figure-latex/unnamed-chunk-7-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-8-1.pdf, id=182, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 346.
+l.242 
+       <./main_files/figure-latex/unnamed-chunk-6-1.pdf>] (./Tables/all_box_blox.tex
+Overfull \hbox (45.68216pt too wide) in paragraph at lines 7--32
+ [][] 
+ []
+
+)
+<main_files/figure-latex/unnamed-chunk-7-1.pdf, id=189, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-7-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-7-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-7-1.pdf  used on input line 253.
 (pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 271.
+(c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 363.
+Package pdftex.def Info: img/Unb.jpg  used on input line 286.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [13
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1.2}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.2}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.363 
-       <./main_files/figure-latex/unnamed-chunk-8-1.pdf>]
+l.286 
+      ]
+<main_files/figure-latex/unnamed-chunk-8-1.pdf, id=195, 469.755pt x 289.08pt>
+File: main_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-8-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 298.
+(pdftex.def)             Requested size: 455.00237pt x 280.00143pt.
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 364.
+Package pdftex.def Info: img/Unb.jpg  used on input line 310.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[14]
-<main_files/figure-latex/unnamed-chunk-10-1.pdf, id=198, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-10-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 414.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
-
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 414--415
-[][] 
- []
-
+[14
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.2}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.310 \chapter
+              {Resultados} <./main_files/figure-latex/unnamed-chunk-7-1.pdf>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 418.
+Package pdftex.def Info: img/Unb.jpg  used on input line 310.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [15
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.3}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.2.3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.418 .... Suspeita-se tambÃ©m que varie segundo}}
-                                                  ]
+l.310 \chapter
+              {Resultados} <./main_files/figure-latex/unnamed-chunk-8-1.pdf>]
+<main_files/figure-latex/unnamed-chunk-10-1.pdf, id=215, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-10-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 353.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+<main_files/figure-latex/unnamed-chunk-12-1.pdf, id=216, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-12-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 372.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 437.
+Package pdftex.def Info: img/Unb.jpg  used on input line 391.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[16 <./main_files/figure-latex/unnamed-chunk-10-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-11-1.pdf, id=215, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-11-1.pdf  used on input line 443.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
+[16
 
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 443--444
-[][] 
- []
 
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.3}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.391 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.4}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.391 
+      ]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 479.
+Package pdftex.def Info: img/Unb.jpg  used on input line 426.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [17
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.4}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.479 \end{aligned}\]
-                      <./main_files/figure-latex/unnamed-chunk-11-1.pdf>]
+l.426 \end{table}
+                  <./main_files/figure-latex/unnamed-chunk-10-1.pdf>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 532.
+Package pdftex.def Info: img/Unb.jpg  used on input line 433.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [18
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.5}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.5}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.532 \end{aligned}\]
-                     ]
+l.433 
+      
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.433 
+       <./main_files/figure-latex/unnamed-chunk-12-1.pdf>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 591.
+Package pdftex.def Info: img/Unb.jpg  used on input line 486.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [19
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.6}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.591 \end{Shaded}
-                  ]
-<main_files/figure-latex/unnamed-chunk-16-1.pdf, id=235, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-16-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-16-1.pdf  used on input line 659.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
-
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 659--660
-[][] 
- []
-
+l.486 
+      ]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 520.
+(c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 661.
+Package pdftex.def Info: img/Unb.jpg  used on input line 538.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [20
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.7}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.661 \begin{Shaded}
-                    
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.8}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.661 \begin{Shaded}
-                    ]
+l.538 
+      ]
+<main_files/figure-latex/unnamed-chunk-22-1.pdf, id=256, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-22-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-22-1.pdf  used on input line 598.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 696.
+Package pdftex.def Info: img/Unb.jpg  used on input line 602.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
 [21
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.9}) has been already used, duplicate ignored
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.8}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.696 \end{Shaded}
-                   <./main_files/figure-latex/unnamed-chunk-16-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-18-1.pdf, id=250, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-18-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-18-1.pdf  used on input line 727.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
-
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 727--728
-[][] 
- []
-
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 729.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[22]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 764.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[23
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.10}) has been already used, duplicate ignored
+l.602 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.9}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.764 \end{Shaded}
-                   <./main_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-21-1.pdf, id=264, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-21-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-21-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-21-1.pdf  used on input line 784.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
-
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 784--785
-[][] 
- []
-
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 803.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[24 <./main_files/figure-latex/unnamed-chunk-21-1.pdf>]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 867.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[25
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.11}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.867 \end{Shaded}
-                  ]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 925.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[26
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.12}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.925 
-      ]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1025.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[27]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1072.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[28]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1157.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[29
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.13}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1157 \begin{Shaded}
-                     ]
-<main_files/figure-latex/unnamed-chunk-29-1.pdf, id=297, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-29-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-29-1.pdf  used on input line 1244.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
-
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 1244--1245
-[][] 
- []
-
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1246.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[30
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.14}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1246 a
-        ssim, no final foi escolhido o modelo \texttt{modsem9} no qual os]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1303.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[31 <./main_files/figure-latex/unnamed-chunk-29-1.pdf>]
-<main_files/figure-latex/unnamed-chunk-31-1.pdf, id=313, 469.755pt x 325.215pt>
-File: main_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
-<use main_files/figure-latex/unnamed-chunk-31-1.pdf>
-Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-31-1.pdf  used on input line 1310.
-(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
-
-Overfull \hbox (36.99103pt too wide) in paragraph at lines 1310--1311
-[][] 
- []
-
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1312.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[32 <./main_files/figure-latex/unnamed-chunk-31-1.pdf>]
-File: img/Unb.jpg Graphic file (type jpg)
-<use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1391.
-(pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
-
-Overfull \vbox (16.70901pt too high) has occurred while \output is active []
-
-[33
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.15}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  \__shipout_drop_firstpage_...
-l.1391 \end{Shaded}
-                   ]
-Underfull \hbox (badness 10000) in paragraph at lines 1453--1455
+l.602 \newpage
+              ]
+Underfull \hbox (badness 10000) in paragraph at lines 611--613
 []\T1/lmr/bx/n/12 (+20) características do pa-ci-ente:X2, seu tra-ta-mento:X4,X5 hos-pi-
  []
 
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1463.
+Package pdftex.def Info: img/Unb.jpg  used on input line 645.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[34
-pdfTeX warning (ext4): destination with the same identifier (name{table.1.16}) has been already used, duplicate ignored
+[22
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.6}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.1463 
-       ]
+l.645 \end{table}
+                  <./main_files/figure-latex/unnamed-chunk-22-1.pdf>]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1548.
+Package pdftex.def Info: img/Unb.jpg  used on input line 699.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[35]
-Underfull \vbox (badness 10000) detected at line 1548
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1548
- []
-
+[23
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.10}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.699 ...X3+ \beta_{X9}X9\tag{\text{Modelo 2.1}}\]
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.11}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.699 ...X3+ \beta_{X9}X9\tag{\text{Modelo 2.1}}\]
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.12}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.699 ...X3+ \beta_{X9}X9\tag{\text{Modelo 2.1}}\]
+                                                  ]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1548.
+Package pdftex.def Info: img/Unb.jpg  used on input line 762.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[36] (./main.bbl (./main.brf)
-\tf@brf=\write6
-\openout6 = `main.brf'.
-
+[24
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.13}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.762 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.14}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.762 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.15}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.762 \newpage
+              
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.16}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.762 \newpage
+              ]
+<main_files/figure-latex/unnamed-chunk-34-1.pdf, id=284, 469.755pt x 325.215pt>
+File: main_files/figure-latex/unnamed-chunk-34-1.pdf Graphic file (type pdf)
+<use main_files/figure-latex/unnamed-chunk-34-1.pdf>
+Package pdftex.def Info: main_files/figure-latex/unnamed-chunk-34-1.pdf  used on input line 838.
+(pdftex.def)             Requested size: 455.00237pt x 315.00163pt.
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 3.
+Package pdftex.def Info: img/Unb.jpg  used on input line 842.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[37]
-bibitemlist
-
-LaTeX Warning: Empty `thebibliography' environment on input line 8.
-
-)
+[25
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.17}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.842 \chapter
+              {ConclusÃ£o}
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.18}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.842 \chapter
+              {ConclusÃ£o}
+pdfTeX warning (ext4): destination with the same identifier (name{table.3.19}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.842 \chapter
+              {ConclusÃ£o}]
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1559.
+Package pdftex.def Info: img/Unb.jpg  used on input line 842.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[38
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\uppercase' on input line 1559.
-
-[39
-
-
-]
+[26
+pdfTeX warning (ext4): destination with the same identifier (name{figure.3.7}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.842 \chapter
+              {ConclusÃ£o} <./main_files/figure-latex/unnamed-chunk-34-1.pdf>]
 
 Class memoir Warning: The material used in the headers is too large
 (31.20901pt) for the given head height (14.5pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 1568.
+(in both cases you will find help in the memoir manual). on input line 848.
 
 
 Class memoir Warning: The material used in the footer is too large
 (42.21004pt) for the given foot skip (30.0pt), it is recommended to
 either increase the foot skip or redesign the footer
-(in both cases you will find help in the memoir manual). on input line 1568.
+(in both cases you will find help in the memoir manual). on input line 848.
 
 
 AED: lastpage setting LastPage
 File: img/Unb.jpg Graphic file (type jpg)
 <use img/Unb.jpg>
-Package pdftex.def Info: img/Unb.jpg  used on input line 1568.
+Package pdftex.def Info: img/Unb.jpg  used on input line 848.
 (pdftex.def)             Requested size: 455.23724pt x 26.85898pt.
 
 Overfull \vbox (16.70901pt too high) has occurred while \output is active []
 
-[40
+[27
 
 ]
-\tf@lof=\write7
-\openout7 = `main.lof'.
+\tf@lof=\write5
+\openout5 = `main.lof'.
 
-\tf@lot=\write8
-\openout8 = `main.lot'.
+\tf@lot=\write6
+\openout6 = `main.lot'.
 
-\tf@toc=\write9
-\openout9 = `main.toc'.
+\tf@toc=\write7
+\openout7 = `main.toc'.
 
-(./main.aux)
-Package rerunfilecheck Info: File `main.brf' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
- ) 
+(./main.aux) ) 
 Here is how much of TeX's memory you used:
- 21485 strings out of 480245
- 353979 string characters out of 5892011
- 806442 words of memory out of 5000000
- 38719 multiletter control sequences out of 15000+600000
- 558229 words of font info for 155 fonts, out of 8000000 for 9000
+ 20960 strings out of 480245
+ 344594 string characters out of 5892011
+ 792334 words of memory out of 5000000
+ 38205 multiletter control sequences out of 15000+600000
+ 558197 words of font info for 162 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
- 87i,16n,91p,1872b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}<c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on main.pdf (41 pages, 583334 bytes).
+ 87i,16n,91p,1001b,502s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}<c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss12.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss17.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/Users/allan/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on main.pdf (28 pages, 478316 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 432 compressed objects within 5 object streams
- 109 named destinations out of 1000 (max. 500000)
- 51461 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 466 PDF objects out of 1000 (max. 8388607)
+ 391 compressed objects within 4 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 51446 words of extra memory for PDF output out of 51595 (max. 10000000)
 
