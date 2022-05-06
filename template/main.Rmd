@@ -116,7 +116,7 @@ O programa utilizado para analisar os dados, modelar e testar com base nos dados
 
 \chapter{Análise}
 
-Sobre a Tabela 1, temos a descrição das variáveis disponíveis pelo banco de dados disponibiilizado pelo hospital, no qual apenas 2 variáveis, "Filiação a Escola de Medicina" (X7) e "Região" (X8) são variáveis qualitativas.
+Sobre a Tabela 1, temos a descrição das variáveis disponíveis pelo banco de dados disponibiilizado pelo hospital, no qual apenas 2 variáveis, "Filiação a Escola de Medicina" ($X7$) e "Região" ($X8$) são variáveis qualitativas.
 
 ```{r}
 # Tabela de nomes X1: Nome variavel
@@ -182,12 +182,10 @@ $$
 *	$e_{i}$ - são independentes e $N(0, \sigma^2)$.
 
 
-  \ \ Para a primeira hipótese, define-se como modelo I aquele que relaciona a variável resposta, Número de enfermeiro(s) (X10), com as variáveis explicativas, instalações (X6), serviços disponíveis pelos hospitais (X11) e a região (X8).
+  \ \ Para a primeira hipótese, define-se como modelo I aquele que relaciona a variável resposta, Número de enfermeiro(s) (X10), com as variáveis explicativas, duração da internação (X1), instalações (X6), serviços disponíveis pelos hospitais (X11) e a região (X8).
   
   \ \ Já o modelo II é definido como aquele que relaciona a variável resposta, Duração da internação (X1), com as variáveis explicativas, a características do paciente (X2), seu tratamento (X4 e X5) e do hospital (X3).
 
-
-Para verificar a natureza e a força da relação entre as variáveis à identificar lacunas e pontos discrepantes no conjunto de dados, utiliza-se a matriz de correlação.
 
 ```{r fig.cap="Gráfico de calor da correlação entre as variaváveis dos dados.", fig.height=4}
 library(ggcorrplot)
@@ -200,7 +198,8 @@ dplyr::select(datax,!matches("adj")) %>% select_if(is.numeric) %>% cor(.) %>%
               lab = TRUE)
 ```
 
-A figura 3, tem-se que as variáveis que estão nas três extremidades externas dos dois eixos apresentam uma correlação forte, então, X10 com X11, X6 com X11 e X10 e X9 com X11, X10 e X6. A maior correlação é apresentada entre as variáveis X6 e X9, que é o número de leitos e a média diária de pacientes, respectivamente, para as variáveis que possuem o "X" marcando-a, pelo teste de correlação de pearson, estás variáveis, com 95% de confiança, não possuem correlação.
+
+Para verificar a natureza e a força da relação entre as variáveis à identificar lacunas e pontos discrepantes no conjunto de dados, utiliza-se a matriz de correlação. A figura 3, tem-se que as variáveis que estão nas três extremidades externas dos dois eixos apresentam uma correlação forte, então, X10 com X11, X6 com X11 e X10 e X9 com X11, X10 e X6. A maior correlação é apresentada entre as variáveis X6 e X9, que é o número de leitos e a média diária de pacientes, respectivamente, para as variáveis que possuem o "X" marcando-a, pelo teste de correlação de pearson, estás variáveis, com 95% de confiança, não possuem correlação.
 
 
 \chapter{Resultados}
@@ -208,7 +207,7 @@ A figura 3, tem-se que as variáveis que estão nas três extremidades externas 
 
 # Dividir dados
 
-Para efetuar estimar os parâmetros do modelo, separa-se o banco em teste e treino no qual 57 observações foram para o treino, dentre elas na Tabela 3, observa-se que os dados amostrados são proporcionais, assim, ao passo da modelagem, a estimação dos parâmetros será mais representativa.
+Para efetuar estimar os parâmetros do modelo, separa-se o banco em teste e treino no qual 57 observações foram para o treino, dentre elas na Tabela 3, observa-se que os dados amostrados são proporcionais aos de validação, assim, ao passo da modelagem, a estimação dos parâmetros será mais representativa.
 
 ```{r}
 library(xtable)
@@ -245,7 +244,7 @@ knitr::kable(k, caption = 'Proporção de observações dos dados no banco de tr
 
 Para o pressuposto da  interação com a região, verifica-se pelo teste ANOVA a dispersão destes dados sobre o número de enfermeiros, no qual a Figura 4, observa-se que os valores centrais estão bem próximos e sobre a Tabela 4, percebe-se que há evidência de não rejeitar a hipótese de igualdade das médias de cada grupo da variável X8, $\mu_1=...=\mu_4$, no qual indica que estes valores não influênciam na resposta do número de enfermeiros.
 
-```{r, fig.cap='Box-plot das variaveil resposta X8 com base na X10.'}
+```{r, fig.cap='Box-plot das variável resposta X8 com base na $X10_{adj}$.'}
 boxplot(dados_train$X10adj~dados_train$X8, ylab='X10', xlab='X8')
 ```
 
@@ -262,7 +261,7 @@ xtable(summ,caption = c('ANOVA para o X8 vs X10.'),
 
 
 
-```{r,echo=FALSE, fig.cap='Gráficos de disperção das variáveis explicativas normalizadas $X6_{adj}$, $X8_{adj}$ e $X11_{adj}$ sobre a variável $X10_{adj}$ , número de enfermeira(o)s.'}
+```{r,echo=FALSE, fig.cap='Gráficos de disperção das variáveis explicativas normalizadas $X6_{adj}$, $X11_{adj}$  e $X8$ sobre a variável $X10_{adj}$ , número de enfermeira(o)s.'}
 library(plotly)
 require(gridExtra)
 require(ggplot2)
@@ -284,31 +283,27 @@ g0+g1+plot_layout(guides = "collect")
 
 
 
+Deseja-se estudar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e  se há diferenças entre os serviços disponíveis pelos hospitais. Neste caso, a variável resposta é o número de enfermeira(o)s e outras variáveis são explicativas.
 
-Deseja-se estudar se o número de enfermeira(o)s está relacionado às instalações, ou seja, os números de leitos do hospital, e  se há diferenças entre os serviços disponíveis pelos hospitais.Neste caso, a variável resposta é o número de enfermeira(o)s e as duas outras variáveis são explicativas.
 
-
-Para isso, faz-se necessário a aplicação da regressão linear múltipla. No qual, na Figura 4, o gráfico da dispersão sobre as variáveis explicativas normalizadas $X6_{adj}$ e $X11_{adj}$, sobre a influência do número de enfermeiros $X10_{adj}$, correlacionada com a $X8_{adj}$, verifica-se que as aproximações podem ser retas de primeira ordem mas há disperção não explicada sobre essas retas, com a densidade destes pontos focalizadas na origem.
+Para isso, faz-se necessário a aplicação da regressão linear múltipla. No qual, na Figura 4, o gráfico da dispersão sobre as variáveis explicativas normalizadas $X6_{adj}$ e $X11_{adj}$, sobre a influência do número de enfermeiros $X10_{adj}$, correlacionada com a $X8$, verifica-se que as aproximações podem ser retas de primeira ordem mas há disperção não explicada sobre essas retas, com a densidade destes pontos focalizadas na origem.
 
 
 
 ## Pressupostos para um modelo inicial
 
 
-Para primeira etapa é definido um modelo inicial para explicar a variável de
-número de enfermeiros $X10$ que é dada por
+Para primeira etapa é definido um modelo inicial para explicar a variável de número de enfermeiros $X10_{adj}$ que é dada por
 
 $$\begin{aligned}
-\hat{y}_{X10}&=
-\beta_{0}+\beta_{X1}X1+\beta_{X6}X6+\beta_{X8}X8+\beta_{X11}X11
-\\ &+\beta_{X1,X8}(X1X8)+\beta_{X6,X8}(X6X8)+\beta_{X8}(X8)+\beta_{X11,X8}(X11X8)
+X10_{adj}&=
+\beta_{0}+\beta_{X1_{adj}}X1_{adj}+\beta_{X6_{adj}}X6_{adj}+\beta_{X8}X8+\beta_{X11_{adj}}X11_{adj}
+\\ &+\beta_{X1_{adj},X8}(X1X8)+\beta_{X6_{adj},X8}(X6_{adj}X8)+\beta_{X8}(X8)+\beta_{X11_{adj},X8}(X11_{adj}X8)
 \end{aligned}$$
 
-no qual presume que o modelo é explicado pela "duração da internação" ($X1$), "Número de leitos" ($X6$), "Facilidades e serviços disponiveis" ($X11$) com a "Região" ($X8$).
+no qual presume que o modelo é explicado pela "duração da internação" ($X1_{adj}$), "Número de leitos" ($X6_{adj}$), "Duração da internação" ($X1_{adj}$), "Facilidades e serviços disponiveis" ($X11_{adj}$) com a "Região" ($X8$).
 
-Aplicando o teste de ausência de Regressão, obtem-se que as variaveis
-explicativas com diferença significativa para o modelo são:  X1, X8, e X6.
-As interações com a região X8, foram descartadas por estar perto do limite do p-value 0.05.
+Aplicando o teste de ausência de Regressão, Tabela 5, obtem-se que as variaveis explicativas com diferença significativa para o modelo são:  $X1_{adj}$, $X8_{adj}:X1_{adj}$, e $X6_{adj}$. As interações com a região X8, foram descartadas por estar perto do limite do p-value 0.05 e por $X8_{adj}$ não ser significante.
 
 
 ```{r,results='asis'}
@@ -325,25 +320,26 @@ print.xtable(xtable(k,caption = c('Modelo - ANOVA'),
                     caption.placement = "top") )
 ```
 
-Agora construindo um novo modelo de regressão 
+Agora construindo um novo modelo de regressão, o modelo segue a forma
 
 
 $$\begin{aligned}
-\hat{y}_{X10}&=
-\beta_{0}+\beta_{X1}X1+\beta_{X6}X6
+\hat{Y}_{X10_{adj}}&=
+\beta_{0}+\beta_{X1_{adj}}X1_{adj}+\beta_{X6_{adj}}X6_{adj}
 \end{aligned}$$
 
 
 
 ```{r,results='asis'}
 modelo_inicial <- lm(X10 ~ X1adj+ X6adj, data=dados_train)
-print.xtable(xtable(summary(modelo_inicial),caption = c('Modelo de regressão - $X10 = X1_{adj} + X6_{adj} $',            caption.placement = "top")))
+print.xtable(xtable(summary(modelo_inicial),caption = c('Modelo de regressão - $X10_{adj} = \\beta_{X1_{adj}} X1_{adj} + \\beta_{X6_{adj}}X6_{adj}$',caption.placement = "top")))
 # Novo modelo
 modelo_inicial <- lm(X10 ~  X6adj, data=dados_train)
 ```
-diferença significativa so em X6,
 
-$$X10=\beta_0+\beta_{X6adj}X6adj \tag{1}$$
+mas análisar a regressão dado na Tabela 6, a váriavel que possui diferença significativa é $X6_{adj}$ no qual o modelo final é dado por
+
+$$X10=\beta_0+\beta_{X6adj}X6adj \tag{1.0}$$
 
 
 Testando a normalidade do modelo atual encontramos um (p-value: `r shapiro.test(modelo_inicial$residuals)$p.value`), no qual rejeitamos a normalidade.
@@ -351,14 +347,7 @@ Dessa forma sera aplicado uma transformação nos dados para ajustar sua normali
 
 
 
-
-$$X10=\beta_0+\beta_{X6adj}X6adj \tag{1}$$
-
-
-
-
-
-## Box-cox transformation
+## Transformção Box-cox
 
 
 ```{r,results='asis', include=FALSE}
@@ -374,9 +363,9 @@ k<-shapiro.test(modelo_inicial_cox$residuals)
 
 
 A transformação box-cox é dada por $Y_{\text{cox}}={(Y^\lambda-1)\over\lambda}$
-no qual para o Número de enfermeira(o)s ($X10$) esta transformação é dada por $X10_{\text{cox}}={({X10}^\lambda-1)\over\lambda}$
+no qual para o Número de enfermeira(o)s ($X10$) esta transformação é dada por $X10_{\text{cox}}={({X10_{adj}}^\lambda-1)\over\lambda}$
 onde lambda é igual $\lambda =`r lambda`$ e assim o
-shapiro teste para os residuos do modelo com box-cox (p-value:`r k$p.value`).
+shapiro teste para os residuos do modelo com box-cox (p-value: `r k$p.value`), não rejeita a normalidade do novo modelo proposto.
 
 
 
@@ -405,47 +394,22 @@ $$X10_{\text{cox}}=\beta_0+\beta_{X6adj}X6adj\tag{\text{Modelo 1.1}}$$
 
 
 
-## Modelo de Etapas
-
-(PENSANDO EM RETIRAR ESSSA SECAO)
-
-
-```{r,results='asis'}
-
-modmin<-lm(X10_cox ~ 1, data=dados_train)
-
-modcompl<-lm(X10_cox~ X1adj+X2adj+X3adj+X4adj+X5adj+X6adj+X8+X9adj+X11adj, data=dados_train)
-
-modfim_step  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="both",data=dados_train, trace = F)
-
-modfim_forward  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="forward",data=dados_train, trace = F)
-
-modfim_backward  <- step(modmin, scope=list(lower=modmin, upper=modcompl), direction="backward",data=dados_train, trace = F)
+## Modelagem dos pressupostos do Hospital 
 
 
 
-# print.xtable(xtable(summary(modfim),caption = c('stepwise model'),
-#                     caption.placement = "top") )
-
-k<-shapiro.test(modfim_step$residuals)
-```
-
-
-## modelo hospital assumptions
-
-
-
-Levando em consideração a Hipotese do Hospital, o modelo será definido como:
+Levando em consideração a Hipotese do Hospital, o modelo será definido utilizando a transformação box-cox e variáveis ajustadas como:
 
 
 $$X10_{\text{cox}}=\beta_0+\beta_{X6adj}X6adj+{X6adj}^2+
-\beta_{X11adj}X11adj+\beta_{X11adj}X11adj^2+\beta_{X8}X8\tag{\text{Modelo 1.3}}$$
+\beta_{X11adj}X11adj+\beta_{X11adj}X11adj^2+\beta_{X8}X8\tag{\text{Modelo 1.2}}$$
 
 
 
 ```{r,echo=FALSE,results='asis'}
 mod_sec.1.0<- lm(formula = X10_cox ~ X6adj+I(X6adj^2) + X3adj+I(X3adj^2)+X8 , data = dados_train)
-print.xtable(xtable(summary(mod_sec.1.0), caption = "Regressão do modelo 1.3"))
+print.xtable(xtable(summary(mod_sec.1.0), caption = "Regressão do modelo 1.2"))
+
 mod_sec.2.0<- lm(formula = X10_cox ~ X6adj + X3adj , data = dados_train)
 r2.adjs <-summary(mod_sec.2.0)$adj.r.squared
 shapiro_sec <-shapiro.test(mod_sec.2.0$residuals)
@@ -454,20 +418,21 @@ shapiro_sec <-shapiro.test(mod_sec.2.0$residuals)
 
 
 
-Ajustando o modelo de acordo com a Regressão:
+Ajustando o modelo de acordo com a Regressão dado pela tabela 7, temos que selecionando as variáveis com diferença significativa obtemos:
 
 $$X10_{\text{cox}}=\beta_0+{X6adj}+
-\beta_{X3adj}X3adj\tag{\text{Modelo 1.4}}$$
+\beta_{X3adj}X3adj\tag{\text{Modelo 1.3}}$$
 
 
-temos que a normalidade do modelo é atendida (p-value `r shapiro_sec$p.value`), não existe
-multicolinearidade (VIF= (1.15,1.15)) e $R^2=`r r2.adjs`$, ou seja, o modelo atende as pressuposições básicas. 
+temos que a normalidade do modelo é atendida (p-value `r shapiro_sec$p.value`), a
+multicolinearidade é fraca, Tabela 8 e $R^2_{adj}=`r r2.adjs`$, ou seja, o modelo atende as pressuposições básicas de um modelo de regressão linear. 
 
 ```{r,results='asis'}
 k<- as.data.frame(car::vif(mod_sec.2.0))
 colnames(k) <-"VIF"
-print.xtable(xtable(k, caption = 'VIF para o modelo 1.4'))
+print.xtable(xtable(k, caption = 'VIF para o modelo 1.3'))
 ```
+
 
 
 
@@ -481,25 +446,24 @@ print.xtable(xtable(k, caption = 'VIF para o modelo 1.4'))
 
 # 
 k<-AIC(mod_sec.1.0,mod_sec.2.0)
-row.names(k) <- paste(c('Modelo'),c("1.3","1.4"))
-print.xtable(xtable(k))
+row.names(k) <- paste(c('Modelo'),c("1.2","1.3"))
+print.xtable(xtable(k, caption= "AIC para os modelos 1.2 e 1.3"))
 ```
 
 
-Comparando os modelos com teste linear geral e o AIC, o teste linear geral dado por `r anova(mod_sec.2.0,mod_sec.1.0 )['Pr(>F)'][2,1]`, o que indica que não há diferença entre o modelo linear e o modelo de segunda ordem. Temos que o modelo proposto pelo hospital não tem diferença significativa, e assim,
-o modelo escolhido foi o que possui primeira ordem (1.4).
+Comparando os modelos, 1.2 e 1.3 com teste linear geral e o AIC, o teste linear geral(p-value: `r anova(mod_sec.2.0,mod_sec.1.0 )['Pr(>F)'][2,1]`), indica que não há diferença entre o modelo linear e o modelo de segunda ordem. Temos que o modelo proposto pelo hospital não tem diferença significativa, e assim,
+o modelo escolhido foi o que possui primeira ordem (1.3).
 
 
 ## Comparação
 
 
-Agora comparando os modelos 1.4 e 1.1, o teste linear geral sob o p-value `r anova(modelo_inicial_cox,mod_sec.2.0 )['Pr(>F)'][2,1]` temos que evidência para acrediatar que existe diferença siginificativa entre os dois modelos, e assim, na tabela 9, observa-se que o modelo 4 possui vallores mais baixos nas métricas AIC, RSS e RMSE onde representa o erro quadrático médio do modelo aplicado no banco de validação.
+Agora comparando os modelos 1.1 e 1.3, o teste linear geral  (p-value: `r anova(modelo_inicial_cox,mod_sec.2.0 )['Pr(>F)'][2,1]`) temos evidência para acrediatar que existe diferença siginificativa entre os dois modelos, e assim, na tabela 9, observa-se que o modelo 1.3 possui vallores mais baixos nas métricas AIC, RSS e RMSE onde representa o erro quadrático médio do modelo aplicado no banco de validação.
 
 
 ```{r,results='asis'}
-
 k<-AIC(modelo_inicial_cox,mod_sec.2.0)
-row.names(k) <- paste(c('Modelo'),c("1.1","1.4"))
+row.names(k) <- paste(c('Modelo'),c("1.1","1.3"))
 predictions.1.1 <- modelo_inicial_cox %>% predict(dados_valid)
 predictions.1.4 <- mod_sec.2.0 %>% predict(dados_valid)
 RMSE.1.1 = RMSE(predictions.1.1,
@@ -514,30 +478,28 @@ k<- cbind(k,
       anova(modelo_inicial_cox,mod_sec.2.0)['RSS'],
       RMSE= c(RMSE.1.1, RMSE.1.4),
       R2= c(R2.1.1, R2.1.4))
-print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob os modelos 1.1 e 1.4."))
+print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob os modelos 1.1 e 1.3."))
 
 ```
 
 
-Comparando os modelos 1.4 e 1.1, o teste linear geral sob o p-value `r anova(modelo_inicial_cox,mod_sec.2.0 )['Pr(>F)'][2,1]` temos que evidência para acrediatar que existe diferença siginificativa entre os dois modelos, e assim, na tabela 9, observa-se que o modelo 4 possui vallores mais baixos nas métricas AIC, RSS e RMSE onde representa o erro quadrático médio do modelo aplicado no banco de validação.
-Dessa forma, na figura 6 temos que o modelo é adequado e segue os pressupostos da regressão.
+Comparando os modelos 1.3 e 1.1, o teste linear geral sob o p-value `r anova(modelo_inicial_cox,mod_sec.2.0 )['Pr(>F)'][2,1]` temos que evidência para acrediatar que existe diferença siginificativa entre os dois modelos, e assim, na tabela 9, observa-se que o modelo 1.3 possui valores mais baixos nas métricas AIC, RSS e RMSE onde representa o erro quadrático médio do modelo aplicado no banco de validação.
 
 
-$$X10_{\text{cox}}=\beta_0+\beta_{X6adj}X6adj+
-\beta_{X3adj}X3adj\tag{\text{Modelo 1.4}}$$
+Dessa forma, o modelo selecionado 1.3, na Figura 6, temos que o modelo é adequado e segue os pressupostos da regressão linear e as estimativas para a regressão são dados pela Tabela.
+
+
 ```{r,echo=FALSE,results='asis'}
-print.xtable(xtable(summary(mod_sec.2.0), caption = "Regressão do modelo"))
+print.xtable(xtable(summary(mod_sec.2.0), caption = "Regressão do modelo 1.3"))
 ```
-$$X10_{\text{cox}}=31.6669+13.2987X6adj+
-3.2335X3adj\tag{\text{Modelo 1.4}}$$
 
-```{r,echo=FALSE, fig.cap="Análise de valores residuais do modelo 1.4."}
+$$X10_{\text{cox}}=31.6669+13.2987X6adj+
+3.2335X3adj\tag{\text{Modelo 1.3}}$$
+
+```{r,echo=FALSE, fig.cap="Análise de valores residuais do modelo 1.3."}
 par(mfrow=c(2,2))
 plot(mod_sec.2.0)
-
 ```
-
-
 
 
 \newpage
@@ -545,21 +507,22 @@ plot(mod_sec.2.0)
 
 # Duração da internação
 
-\ \ Como já mencionado anteriormente, o intuito do modelo II seria avaliar as possíveis relações que as variáveis explicativas apresentam em relação a duração de internação (X1). Para isso, realizando o teste ANOVA, a dispersão destes dados sobre a duração de internação, apresentados os resultados na Tabela 10 e considerando o nível de significância de 5%, temos que pelos testes de igualdade de parâmetros iguais a zero, deu diferença significativa as variáveis explicativas $X3$, $X6$ e $X9$.
+\ \ Como já mencionado anteriormente, o intuito do modelo II seria avaliar as possíveis relações que as variáveis explicativas apresentam em relação a duração de internação (X1). Para isso, realizando o teste ANOVA, Tabela 12, considerando o nível de significância de 5%, temos que pelos testes de igualdade de parâmetros iguais a zero, deu diferença significativa as variáveis explicativas $X3_{adj}$, $X6_{adj}$ e $X9_{adj}$.
 
 ```{r,echo=FALSE,results='asis'}
 mod1 <- aov(X1adj ~ X2adj+X3adj+X4adj+X5adj+X6adj+X9adj+X10adj+X11adj, data=dados_train)
-print.xtable(xtable(summary(mod1),caption = c('ANOVA - model pre'),
+print.xtable(xtable(summary(mod1),caption = c('ANOVA - model 2.1'),
                     caption.placement = "top") )
 ```
 
 Considerando as variável explicativa, tem-se o modelo inicial dado por:
 
 $$
-      Y_{X1adj} = \beta_0 + \beta_1  X_{3}adj + \beta_2  X_{6}adj  + \beta_3  X_{9}adj + e_{i} , \forall \ \textit{i = i,} \dots \textit{, n}
+      X1_{adj} = \beta_0 + \beta_1  X3_{adj} + \beta_2  X6_{adj}  + \beta_3  X9_{adj} \tag{2.0}
 $$
 
-\ \ Utilizando o Fator de Inflação da Variância (VIF), obtém-se os valores para X3, X6 e X9, através da Tabela 11, como 1,19, 30,10 e 30,74, respectivamente. Pode-se analisar que o máximo dele é maior que 10, indicando assim a presença de multicolinearidade. Conclui-se que a variável X6 e X9 estão correlacionadas, o que é verificado anteriormente através da força do resultado do coeficiente de correlação. 
+\ \ Utilizando o Fator de Inflação da Variância (VIF), obtém-se os valores para $X3_{adj}$, $X6_{adj}$ e $X9_{adj}$, através da Tabela 13, como 1,19, 30,10 e 30,74, respectivamente. Pode-se analisar que o máximo dele é maior que 10, indicando assim a presença de multicolinearidade. Conclui-se que a variável $X6_{adj}$ e $X9_{adj}$ estão correlacionadas, o que é verificado anteriormente através da força do resultado do coeficiente de correlação. 
+
 
 ```{r,echo=FALSE,results='asis'}
 modelo_inicial <- lm(X1adj ~ X3adj + X6adj + X9adj ,data=dados_train)
@@ -568,23 +531,29 @@ modelo_inicial <- lm(X1adj ~ X3adj + X6adj + X9adj ,data=dados_train)
 #caption.placement = "top"))
 k<- as.data.frame(car::vif(modelo_inicial))
 colnames(k) <-"VIF"
-print.xtable(xtable(k, caption = "VIF Modelo inicial"))
+print.xtable(xtable(k, caption = "VIF Modelo 2.0"))
 ```
 
-\ \ Com isso, não é necessário o uso das duas variáveis, basta uma para representar no modelo. Para selecionar qual a variável é a melhor para representar, avalia-se primeiramente as correlações da variável resposta com as duas explicativas, através da Figura 3 obtida anteriormente, o valor para X1 e X6 é de 0,43, enquanto o de X1 e X9 é de 0,48. Com isso, temos que pela análise dos coeficientes de correlação, a variável X9 apresenta uma maior correlação com a variável resposta, então é a sugerida para a validação. Ainda na seleção de variáveis entre X6 e X9, tem-se os modelos para avaliar qual prediz melhor:
-\newpage
+\ \ Com isso, não é necessário o uso das duas variáveis, basta uma para representar no modelo. Para selecionar qual a variável é a melhor para representar, avalia-se primeiramente as correlações da variável resposta com as duas explicativas, através da Figura 3 obtida anteriormente, o valor para $X1$ e $X6$ é de 0,43, enquanto o de $X1$ e $X9$ é de 0,48. Com isso, temos que pela análise dos coeficientes de correlação, a variável $X9_{adj}$ apresenta uma maior correlação com a variável resposta, então é a sugerida para a validação. Ainda na seleção de variáveis entre $X6_{adj}$ e $X9_{adj}$, tem-se os modelos para avaliar qual prediz melhor:
+
+
 $$X1=\beta_0+\beta_{X3}X3adj+ \beta_{X9}X9adj\tag{\text{Modelo 2.1}}$$
 
-$$X1=\beta_0+\beta_{X3}X3adj+ \beta_{X6}X6adj \tag{\text{Modelo 2.4}}$$
+$$X1=\beta_0+\beta_{X3}X3adj+ \beta_{X6}X6adj \tag{\text{Modelo 2.2}}$$
 
-```{r,include =FALSE,echo=FALSE,results='asis'}
+no qual nas Tabelas 14 e 15, temos a regressão destes modelos
+
+```{r,echo=FALSE,results='asis'}
 mod0 <- lm(X1adj ~ X3adj + X9adj ,data=dados_train)
-print.xtable(xtable(summary(modelo_inicial),
+print.xtable(xtable(summary(mod0),
 caption = c('Regressao - model 2.1'),
 caption.placement = "top"))
+```
+
+```{r,echo=FALSE,results='asis'}
 mod1 <- lm(X1adj ~ X3adj + X6adj ,data=dados_train)
-print.xtable(xtable(summary(modelo_inicial),
-caption = c('Regressao - model 2.1'),
+print.xtable(xtable(summary(mod1),
+caption = c('Regressao - model 2.2'),
 caption.placement = "top"))
 ```
 
@@ -609,13 +578,11 @@ k<- cbind(k,
 print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob os modelos 2.1 e 2.4."))
 ```
 
-\ \ Com a tabela acima, é possível verificar através do coeficiente de determinação, também conhecido como $R^2$, que, novamente, a variável explicativa que melhor se adequa ao modelo é a variável X9, visto que o valor do coeficiente foi maior que o de X6, tanto no modelo completo como no ajustado. Por fim, para finalizar a seleção das variáveis, tem-se o modelo ajustado:
+\ \ Com a tabela 16, é possível verificar através do coeficiente de determinação aplicado no banco de validação, também conhecido como $R^2$, que, novamente, a variável explicativa que melhor se adequa ao modelo é a variável $X9_{adj}$, visto que o valor do coeficiente foi maior que o de $X6_{adj}$, tanto no modelo completo como no ajustado. Por fim, para finalizar a seleção das variáveis, tem-se o modelo ajustado utilizado é o modelo 2.2.
 
-$$
-      Y_i = \beta_0 + \beta_1  X_{3}adj + \beta_2  X_{9}adj  + e_{i} \ , \forall \ \textit{i = i,} \dots \textit{, n}
-$$ 
 
-\ \ Onde a segunda variável explicativa irá variar entre a X6 e a X9, comparando o modelo inicial com o ajustado, aplicando o Cp de Mallows, tem-se que os valores obtidos para X6 e X9 são aproximadamente 6,57 e 8,85, respectivamente. Com isso, para realizar a escolha entre os modelos, utiliza-se o que apresentou o menor valor do critério, novamente, a variável explicativa X9 é escolhida. Portanto, tem-se o modelo ajustado com a escolha da segunda variável explicativa é determinado pelo Modelo 2.1.
+
+\ \ Comparando o modelo inicial, 2.0, com os ajustados, 2.1 e 2.2, aplicando o Cp de Mallows, tem-se que os valores obtidos para $X6_{adj}$ e $X9_{adj}$ são aproximadamente 6,57 e 8,85, respectivamente. Com isso, para realizar a escolha entre os modelos, utiliza-se o que apresentou o menor valor do critério, novamente, a variável explicativa $X9_{adj}$ é escolhida. Portanto, tem-se o modelo ajustado com a escolha da segunda variável explicativa é determinado pelo Modelo 2.1.
 
 ```{r,include=FALSE,results='asis'}
 modelo_inicial <- lm(X1adj ~  X3adj  + X9adj
@@ -628,7 +595,8 @@ colnames(k) <-"VIF"
 print.xtable(xtable(k, caption = "Novo Modelo utilizado."))
 ```
 
-\ \ Analisando o modelo ajustado e utilizando o Fator de Inflação da Variância (VIF), obtém-se os valores para X3 e X9 como 1,17 e 1,17, respectivamente. Pode-se analisar que o máximo dele não é maior que 10, indicando assim a ausência de multicolinearidade. Verifica-se a normalidade do modelo através do teste de Shapiro-Wilk, tem-se que o p-valor obtido é de aproximadamente 0,9, o que considerando o nível de significância de 5%, o modelo apresenta distribuição normal. Aplicando o $R^2$, tem-se ainda que o valor obtido foi de 30%, o que é um valor fraco. Por fim, outra maneira analisar o modelo é através da raiz do erro quadrático médio (RMSE) que apresentou valor de 9.98, que é considerado um modelo bom.
+\ \ Analisando o modelo ajustado e utilizando o Fator de Inflação da Variância (VIF), obtém-se os valores para X3 e X9 como 1,17 e 1,17, respectivamente. Pode-se analisar que o máximo dele não é maior que 10, indicando assim a ausência de multicolinearidade. Verifica-se a normalidade do modelo através do teste de Shapiro-Wilk, tem-se que o p-valor obtido é de aproximadamente 0,9, o que considerando o nível de significância de 5%, o modelo apresenta distribuição normal. Aplicando o $R^2$, tem-se ainda que o valor obtido foi de 30%, o que é um valor fraco. Por fim, outra maneira analisar o modelo é através da raiz do erro quadrático médio (RMSE) que apresentou valor de 9.98.
+
 ```{r,echo=FALSE,results='asis'}
 predictions <- modelo_inicial %>% predict(dados_valid)
 #RMSE(predictions, dados_valid$X1) 
@@ -639,12 +607,13 @@ colnames(k) <-c("RMSE","R2")
 row.names(k) <- "Modelo 2.1"
 print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob o modelo 2.1"))
 ```
+
 \ \ Logo, tem-se que a duração de internação está relacionada tanto com o risco de infecção como com a média diária de pacientes. Mas ainda entrando na questão de avaliar se existem outras variáveis explicativas que estão correlacionadas com a duração, é recomendado utilizar outras maneiras de fazer essa modelagem, como os métodos Stepwise, Forward e o Backward. Aplicando os três métodos, conclui-se que todos os geraram o mesmo modelo:
 
-$$X1adj=\beta_0+\beta_{X3}X3adj+\beta_{X8}X8+
-\beta_{X9}X9adj+ \beta_{X11}X11adj\tag{\text{Modelo 2.2}}$$
+$$X1_{adj}=\beta_0+\beta_{X3_{adj}}X3_{adj}+\beta_{X8}X8+
+\beta_{X9_{adj}}X9_{adj}+ \beta_{X11_{adj}}X11_{adj}\tag{\text{Modelo 2.3}}$$
 
-\ \ Verifica-se a normalidade do modelo através do teste de Shapiro-Wilk, tem-se que o p-valor obtido é de aproximadamente 0,7, o que considerando o nível de significância de 5%, o modelo apresenta distribuição normal. Com auxílio da Tabela 17, analisando $R^2$, tem-se ainda que o valor obtido foi de 46%, o que é um valor moderado. E finalmente, a raiz do erro quadrático médio (RMSE) apresentou valor de 1,64, que é considerado um modelo bom.
+\ \ Sobre este modelo 2.3 verifica-se a normalidade do modelo através do teste de Shapiro-Wilk, tem-se que o p-valor obtido é de aproximadamente 0,7, o que considerando o nível de significância de 5%, o modelo apresenta distribuição normal. Com auxílio da Tabela 18, analisando $R^2$, tem-se ainda que o valor obtido foi de 46%, o que é um valor moderado. E finalmente, a raiz do erro quadrático médio (RMSE) apresentou valor de 9,92, que é considerado um modelo bom.
 
 ```{r,echo=FALSE,results='asis'}
 modstep <- lm(formula = X1adj ~ X3adj + X8 + X9adj + X11adj, data = dados_train)
@@ -657,30 +626,37 @@ predictions <- modstep %>% predict(dados_valid)
 
 k<- cbind(RMSE(predictions, dados_valid$X1),R2(predictions, dados_valid$X1) )
 colnames(k) <-c("RMSE","R2")
-row.names(k) <- "Modelo 2.2"
-print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob o modelo 2.2"))
+row.names(k) <- "Modelo 2.3"
+print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob o modelo 2.3"))
 ```
 
-```{r,include=FALSE,results='asis'}
+
+
+```{r,results='asis'}
 k<- as.data.frame(car::vif(modstep))
 k<-k[-c(1,2)]
 colnames(k) <-"VIF"
-print.xtable(xtable(k, caption = "Modelo modstep"))
+print.xtable(xtable(k, caption = "Modelo 2.3"))
 modelo_inicial <- lm(X1adj ~  X3adj  + X9adj
                      ,data=dados_train)
 ```
-\ \ Analisando o modelo ajustado e utilizando o Fator de Inflação da Variância (VIF), obtém-se os valores para X3,X8, X9 e X11 os 4 deram abaixo de 10. Pode-se analisar que o máximo dele não é maior que 10, indicando assim a ausência de multicolinearidade. 
+
+\ \ Analisando o modelo ajustado e utilizando o Fator de Inflação da Variância (VIF), a Tabela 19, obtém-se os valores para $X3_{adj}$,$X8$, $X9_{adj}$ e $X11_{adj}$ os 4 deram abaixo de 10. Pode-se analisar que o máximo dele não é maior que 10, indicando assim a ausência de multicolinearidade. 
 
 
 ## Comparação entre modelos
 
-\ \ Agora, comparando os modelos obtidos 2.1 e 2.2, tem-se os seguintes valores: 
+
+\ \ Por fim, analisando os modelos 2.1 e 2.3, a Tabela 20, pelo o teste de linear geral, (p-value: `r anova(modstep,modelo_inicial )['Pr(>F)'][2,1]`), tem diferença significativa entre os modelos. Dentre os resultados, analisando soma de quadrados residual (RSS), obtém-se os valores 18.05  e 11.86, respectivamente. Dessa forma, escolhe-se o modelo 2.3, já que, apresentou o RSS menor, e ainda o Critério da Informação de Akaike (AIC), obtém-se para os modelo 2.1 e 2.3 os valores 104.23 e 88.29.
 
 ```{r,echo=FALSE,results='asis'}
 k<-AIC(modstep,modelo_inicial)
 #anova(modstep,modelo_inicial)
 # anova(modelo_inicial,modstep)# quanto melhor o RSS melhor
-row.names(k) <- paste(c('Modelo'),c("Step-wise","Secionado H."))
+row.names(k) <- paste(c('Modelo'),c("Modelo 2.3","Modelo 2.1"))
+
+
+
 predictions.2.1 <- modstep %>% predict(dados_valid)
 predictions.2.4 <- modelo_inicial %>% predict(dados_valid)
 RMSE.2.1 = RMSE(predictions.2.1,
@@ -701,19 +677,15 @@ k<- cbind(k,
 print.xtable(xtable(k, caption = "Metricas avaliadas nos dados de validação sob os modelos 2.1 e 2.4."))
 ```
 
-\ \ Por fim, analisando o modelo obtido através da ausência de regressão e o novo modelo, aplicando o teste de ANOVA entre eles e analisando soma de quadrados residual (RSS), obtém-se os valores 18.05  e 11.86, respectivamente. Como, considerando o p-valor do teste, 0,0002, é menor que o nível de significância de 5%, é possível realizar uma escolha entre os dois métodos. Dessa forma, escolhe-se o modelo novo, já que, apresentou o RSS menor. Analisando ainda o Critério da Informação de Akaike (AIC), obtém-se para o modelo de ausência de regressão e para o novo modelo foi de 104.23 e 88.29, respectivamente, com isso, escolhe-se o novo modelo por apresentar o menor valor. 
-
-
-
-$$X1adj=\beta_0+\beta_{X3}X3adj+\beta_{X8}X8+
-\beta_{X9}X9adj+ \beta_{X11}X11adj\tag{\text{Modelo 2.2}}$$
 
 
 ```{r,echo=FALSE,results='asis'}
-print.xtable(xtable(summary(modstep), caption = "Regressão do modelo"))
+print.xtable(xtable(summary(modstep), caption = "Regressão do modelo 2.3"))
 ```
-$$X1adj=0.4685+0.4388 X3adj+\beta_{X8}X8+
-0.3711X9adj -0.2210 X11adj\tag{\text{Modelo 2.2}}$$
+
+
+$$X1_{adj}=0.4685+0.4388 X3_{adj}+\beta_{X8}X8+
+0.3711X9_{adj} -0.2210 X11_{adj}\tag{\text{Modelo 2.3}}$$
 
 ```{r,echo=FALSE, fig.cap="Análise de valores residuais do modelo 1.4."}
 par(mfrow=c(2,2))
@@ -726,7 +698,37 @@ plot(modstep)
 \chapter{Conclusão}
 
 
+X1 Duração da Internação 
 
+X3 Risco de Infecção + X8 Região + X9 Média diária de pacientes + X11 Facilidades e serviços disponíveis 
+
+ 
+
+ 
+Características do tratamento são: Facilidades e serviços disponíveis (X11), Proporção de Culturas de Rotina (X4), Proporção de Raio-X de Tórax de Rotina (X5). 
+Características do hospital são: Risco de Infecção (X3), Número de leitos (X6), Filiação a Escola de Medicina (X7), Região(X8), Número de enfermeiro(s)(X10). 
+Características do paciente é a Idade (X2) 
+ 
+Pode-se concluir que depois da modelagem para duração da internação ela é explicada pelas variáveis de: Risco de Infecção, Região, média diária de pacientes e Facilidades e serviços disponíveis. Dessa forma, referente a hipótese proposta pelo trabalho percebemos que características do paciente não é um fator explicativo para a Duração da internação, porem as características do tratamento e do hospital influenciam diretamente a duração de internação. 
+
+ 
+
+ 
+
+ 
+
+X10 Número de enfermeiro(s) 
+
+X3 Risco de Infecção + X6 Número de leitos 
+
+ 
+Características das instalações: Número de leitos (X6), média diária de pacientes (X9), Risco de Infecção (X3) 
+
+Características dos serviços disponíveis é Facilidades e serviços disponíveis (X11) 
+ 
+ 
+
+Pode-se concluir que depois da modelagem para Número de enfermeiro(s) ela é explicada pelas variáveis de: Risco de Infecção Número de leitos. Dessa forma, referente a hipótese proposta pelo trabalho percebemos que características dos serviços disponíveis e a Região do Hospital não é um fator explicativo para a Número de enfermeiro(s), porem as características das instalações e do hospital influenciam diretamente o Número de enfermeiro(s).
 
 
 
