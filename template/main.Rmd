@@ -68,6 +68,7 @@ knitr::opts_chunk$set(echo = F, warning = F, message=FALSE)
 
 \chapter{Introdução}
 
+\ \ Realizar uma pesquisa com auxílio das ferramentas estatísticas para avaliar quais são os parâmetros que melhor predizem as questões que são frequentemente levantas na área da saúde é imprescindível quando o assunto é a melhoria no âmbito do tratamento da sociedade como um todo. O intuito do presente documento é identificar as variáveis que se relacionam o número de enfermeiro(s) e a duração de internação de uma amostra	 aleatória	 de	 113	 hospitais	 selecionados	 aleatoriamente	 dentre	 338	 pesquisados	 nos Estados	Unidos	no	período	de	1975-1976.	Sendo assim, utilizando a análise de regressão, as variáveis definidas no decorrer no documento direcionam melhor qualquer tomada de decisão a ser tomada.
 
 
 # Objetivos
@@ -697,50 +698,15 @@ plot(modstep)
 
 \chapter{Conclusão}
 
+\ \ Dado o exposto, nota-se que a multicolinearidade é motivo de preocupação na aplicação de modelagem, uma vez que causa confundimento e pode levar a conclusões precipitadas, no caso dos estudos realizados a presença desde fenômeno é evidênciada nas duas hipóteses. A fim de mitigar os possíveis erros, faz-se necessário a análise descritiva dos dados e como já analisado anteriormente, tem-se que algumas variáveis são mais correlacionadas com as outras. Com isso, pode-se visualizar um modelo com as variáveis explicativas que melhor predizem sobre a variável resposta em questão. Foram selecionadas as variáveis com variações pequenas nas estimativas, o que é um sinal de que possivelmente o modelo é adequado para a amostra. 
 
-X1 Duração da Internação 
+\ \ O teste de ausência de regressão para o modelo I, considerando o nível de significância 5%, leva a conclusão de que existe regressão, uma vez que o p-valor obtido é menor que o $\alpha$. Essa mesma comparação do p-valor é levada em consideração em relação aos parâmetros também, há evidências para rejeitar que são iguais a hipótese zero, ou seja, $\beta_0$ e as variáveis X3adj e X6adj estão no modelo. Dado que X3adj representa o risco de infecção e X6adj o número de leitos, $\beta_0$ indica que quando o X3 e X6 são iguais a zero, a média do número de enfermeiros (X10) é de 31.6669  por hospital. Já o $\beta_1$, indica que a cada unidade a mais de X6adj a média do número de enfermeiros aumenta em 13.2987. Por fim, $\beta_2$, indica que a cada unidade a mais de X3adj a média do número de enfermeiros aumenta em 3.2335.
 
-X3 Risco de Infecção + X8 Região + X9 Média diária de pacientes + X11 Facilidades e serviços disponíveis 
+ \ \ Pode-se concluir que depois da modelagem para Número de enfermeiro(s) ela é explicada pelas variáveis de: Risco de Infecção Número de leitos. Dessa forma, referente a hipótese proposta pelo trabalho percebemos que características dos serviços disponíveis e a Região do Hospital não é um fator explicativo para a Número de enfermeiro(s), porém as características das instalações e do hospital influenciam diretamente ao número de enfermeiro(s).
 
- 
+ \ \ Quanto ao segundo modelo, o teste de ausência de regressão, considerando o nível de significância 5%, leva a conclusão de que existe regressão, uma vez que o p-valor obtido é menor que o $\alpha$. Essa mesma comparação do p-valor é levada em consideração em relação aos parâmetros também, há evidências para rejeitar que são iguais a hipótese zero, ou seja, $\beta_0$ e as variáveis X3adj, X8, X9adj e X11adj estão no modelo. Dado que  X3adj, X8, X9adj e X11adj representam o risco de infecção, região, média diária de pacientes e facilidades e serviços disponíveis, respectivamente, $\beta_0$ indica que quando o X3adj, X8, X9adj e X11adj são iguais a zero, a duração média da internação (X1) é de 0.4685 por hospital. Os $\beta_1$ e $\beta_3$, indicam que a cada unidade a mais de X3adj e X9adj a duração média da internação aumenta em 0.4388 e 0.3711, respectivamente. Por fim, $\beta_2$ e $\beta_4$, indicam que a cada unidade a mais de X8 e X11adj a duração média da internação diminui em, especificando a variável X8 como X82, X83 e X84, 0.5549, 0.5910, 1.0330 e 0.2210, respectivamente.
 
- 
-Características do tratamento são: Facilidades e serviços disponíveis (X11), Proporção de Culturas de Rotina (X4), Proporção de Raio-X de Tórax de Rotina (X5). 
-Características do hospital são: Risco de Infecção (X3), Número de leitos (X6), Filiação a Escola de Medicina (X7), Região(X8), Número de enfermeiro(s)(X10). 
-Características do paciente é a Idade (X2) 
- 
-Pode-se concluir que depois da modelagem para duração da internação ela é explicada pelas variáveis de: Risco de Infecção, Região, média diária de pacientes e Facilidades e serviços disponíveis. Dessa forma, referente a hipótese proposta pelo trabalho percebemos que características do paciente não é um fator explicativo para a Duração da internação, porem as características do tratamento e do hospital influenciam diretamente a duração de internação. 
-
- 
-
- 
-
- 
-
-X10 Número de enfermeiro(s) 
-
-X3 Risco de Infecção + X6 Número de leitos 
-
- 
-Características das instalações: Número de leitos (X6), média diária de pacientes (X9), Risco de Infecção (X3) 
-
-Características dos serviços disponíveis é Facilidades e serviços disponíveis (X11) 
- 
- 
-
-Pode-se concluir que depois da modelagem para Número de enfermeiro(s) ela é explicada pelas variáveis de: Risco de Infecção Número de leitos. Dessa forma, referente a hipótese proposta pelo trabalho percebemos que características dos serviços disponíveis e a Região do Hospital não é um fator explicativo para a Número de enfermeiro(s), porem as características das instalações e do hospital influenciam diretamente o Número de enfermeiro(s).
-
-
-
-
-
-
-
-
-
-
-
-
+ \ \ Pode-se concluir que depois da modelagem para duração da internação ela é explicada pelas variáveis de: risco de infecção, região, média diária de pacientes e facilidades e serviços disponíveis. Considerando que as características do tratamento são dadas pelas variáveis facilidades e serviços disponíveis (X11), proporção de Culturas de Rotina (X4) e proporção de Raio-X de Tórax de Rotina (X5), as do hospital são dadas pelo risco de Infecção (X3), número de leitos (X6), filiação a Escola de Medicina (X7), região(X8) e número de enfermeiro(s) (X10) e, finalmente, as do paciente é dada pela idade. Dessa forma, referente a hipótese proposta pelo trabalho percebemos que características do paciente não é um fator explicativo para a Duração da internação, porém as características do tratamento e do hospital influenciam diretamente a duração de internação.
 
 
 
